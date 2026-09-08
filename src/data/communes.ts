@@ -105,7 +105,7 @@ export const COMMUNES: readonly Commune[] = [
       {
         titre: 'Est-ce qu’il faut être en forme pour commencer ?',
         texte:
-          'Non. Une première séance se passe au sac, à la corde et aux pattes d’ours, avec un coach qui règle l’intensité sur toi. La condition physique est ce que la boxe fabrique, pas ce qu’elle exige à l’entrée.',
+          'Une première séance se passe au sac, à la corde et aux pattes d’ours, avec un coach qui règle l’intensité sur toi. La condition physique est ce que la boxe fabrique : elle se gagne séance après séance.',
       },
     ],
   },
