@@ -1,7 +1,7 @@
 # Boxing Center — depuis Cugnaux · brief de site
 
 Loi commune : `../BLUEPRINT-SATELLITES-BOXING-CENTER.md`.
-Domaine `www.boxingcenter-cugnaux.fr` · dépôt `https://github.com/Eddy-etame/Boxingcenter-cugnaux.git` (à initialiser : README + .gitignore excluant `wetransfer_*/`).
+Domaine `www.boxingcenter-cugnaux.fr` · dépôt `https://github.com/Eddy-etame/Boxingcenter-cugnaux.git` (initialisé et poussé le 2026-09-08).
 
 ## Destination — une seule
 **Boxing Center Portet-sur-Garonne** — mêmes faits, URLs, offre et fun fact que le brief Muret (`../boxing-center-muret/BLUEPRINT.md`).
@@ -36,10 +36,10 @@ Redirections : `/club-boxe-cugnaux`, `/club-mma-cugnaux`, `/salle-mma-cugnaux`, 
 | PORTET_019 | `salle-mma-cage-cugnaux.webp` | /mma/ | Deux pratiquants à l'entraînement devant la cage, sol rouge |
 | PORTET_037 | `cours-boxe-pattes-ours-cugnaux.webp` | première séance / femme | Une pratiquante frappe la patte d'ours orange tenue par un coach |
 | PORTET_021 | `preparation-physique-cugnaux.webp` | prépa physique | Vélos et rameur sur le gazon de l'espace cardio |
-| WhatsApp ×4 | `ring-boxe-cugnaux.webp` | vignettes uniquement (0,8 Mpx) | ring, sacs et drapeaux, poires de vitesse |
-Puis : les non-utilisées de Colomiers (Minimes, légendées Minimes), puis Muret (mêmes photos Portet, autres cadrages — éviter le même hero que Muret : 051 reste à Muret, 014 à Cugnaux).
+| WhatsApp ×4 | `ring-de-boxe-cugnaux.webp`, `sacs-de-frappe-cugnaux.webp`, `poires-de-vitesse-cugnaux.webp`, `salle-de-boxe-cugnaux.webp` | vignettes uniquement (0,8 Mpx) | le ring et les sacs ; les sacs sous les drapeaux ; les poires de vitesse ; la salle vue du ring |
+Puis : les non-utilisées de Colomiers, légendées « … — Boxing Center » sans nommer de salle ; puis les Portet du lot Muret non utilisées (051 reste le hero de Muret, 014 celui de Cugnaux — jamais le même).
 
 ## Système visuel — sous-famille Portet (papier chaud · encre · cuivre), hero de la direction retenue, **cadrage et photo différents de Muret**.
 
 ## Concurrence : « club de boxe Cugnaux », « MMA Cugnaux », « boxe thaï Cugnaux » + Villeneuve-Tolosane, Frouzins, Seysses → `.recherche/concurrence-cugnaux.md`.
-## Bloquants : vérifier « Villeneuve-Tolosane limitrophe de Portet » ; droits photos.
+## Bloquants : vérifier sur carte « Villeneuve-Tolosane limitrophe de Portet » avant de l'écrire.
