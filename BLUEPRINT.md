@@ -32,11 +32,11 @@ Redirections : `/club-boxe-cugnaux`, `/club-mma-cugnaux`, `/salle-mma-cugnaux`, 
 ## Images — 4 Portet pro (6720 px) en tête, 4 WhatsApp (768×1024) en vignettes seulement
 | Source | Nom | Usage | Alt |
 |---|---|---|---|
-| PORTET_014 | `club-boxe-cugnaux-boxing-center-01.jpg` | **hero** | La salle de sacs de cuir brun sur le sol turquoise, vide, lumière du jour |
-| PORTET_019 | `salle-mma-cugnaux-cage-boxing-center-02.jpg` | /mma/ | Deux pratiquants à l'entraînement devant la cage, sol rouge |
-| PORTET_037 | `cours-boxe-cugnaux-pattes-ours-boxing-center-03.jpg` | première séance / femme | Une pratiquante frappe la patte d'ours orange tenue par un coach |
-| PORTET_021 | `preparation-physique-cugnaux-boxing-center-04.jpg` | prépa physique | Vélos et rameur sur le gazon de l'espace cardio |
-| WhatsApp ×4 | `ring-boxe-cugnaux-boxing-center-05..08.jpg` | vignettes uniquement (0,8 Mpx) | ring, sacs et drapeaux, poires de vitesse |
+| PORTET_014 | `club-boxe-cugnaux.webp` | **hero** | La salle de sacs de cuir brun sur le sol turquoise, vide, lumière du jour |
+| PORTET_019 | `salle-mma-cage-cugnaux.webp` | /mma/ | Deux pratiquants à l'entraînement devant la cage, sol rouge |
+| PORTET_037 | `cours-boxe-pattes-ours-cugnaux.webp` | première séance / femme | Une pratiquante frappe la patte d'ours orange tenue par un coach |
+| PORTET_021 | `preparation-physique-cugnaux.webp` | prépa physique | Vélos et rameur sur le gazon de l'espace cardio |
+| WhatsApp ×4 | `ring-boxe-cugnaux.webp` | vignettes uniquement (0,8 Mpx) | ring, sacs et drapeaux, poires de vitesse |
 Puis : les non-utilisées de Colomiers (Minimes, légendées Minimes), puis Muret (mêmes photos Portet, autres cadrages — éviter le même hero que Muret : 051 reste à Muret, 014 à Cugnaux).
 
 ## Système visuel — sous-famille Portet (papier chaud · encre · cuivre), hero de la direction retenue, **cadrage et photo différents de Muret**.
