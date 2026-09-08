@@ -1,6 +1,6 @@
 # Boxing Center — depuis Cugnaux · brief de site
 
-Loi commune : `../BLUEPRINT-SATELLITES-BOXING-CENTER.md`.
+Loi commune : `./BLUEPRINT-FAMILLE.md` (copie de `../BLUEPRINT-SATELLITES-BOXING-CENTER.md`).
 Domaine `www.boxingcenter-cugnaux.fr` · dépôt `https://github.com/Eddy-etame/Boxingcenter-cugnaux.git` (initialisé et poussé le 2026-09-08).
 
 ## Destination — une seule
@@ -39,7 +39,7 @@ Redirections : `/club-boxe-cugnaux`, `/club-mma-cugnaux`, `/salle-mma-cugnaux`, 
 | WhatsApp ×4 | `ring-de-boxe-cugnaux.webp`, `sacs-de-frappe-cugnaux.webp`, `poires-de-vitesse-cugnaux.webp`, `salle-de-boxe-cugnaux.webp` | vignettes uniquement (0,8 Mpx) | le ring et les sacs ; les sacs sous les drapeaux ; les poires de vitesse ; la salle vue du ring |
 Puis : les non-utilisées de Colomiers, légendées « … — Boxing Center » sans nommer de salle ; puis les Portet du lot Muret non utilisées (051 reste le hero de Muret, 014 celui de Cugnaux — jamais le même).
 
-## Système visuel — sous-famille Portet (papier chaud · encre · cuivre), hero de la direction retenue, **cadrage et photo différents de Muret**.
+## Système visuel — sous-famille Portet (papier `#f3efe6` · encre `#1e2044` · cuivre : texte `#7a3d16`, aplats `#b8763a` — loi commune §7), hero de la direction retenue, **cadrage et photo différents de Muret**.
 
 ## Concurrence : « club de boxe Cugnaux », « MMA Cugnaux », « boxe thaï Cugnaux » + Villeneuve-Tolosane, Frouzins, Seysses → `.recherche/concurrence-cugnaux.md`.
 ## Bloquants : vérifier sur carte « Villeneuve-Tolosane limitrophe de Portet » avant de l'écrire.
