@@ -45,7 +45,7 @@ export const SITE = {
    * jamais un nombre de kilomètres : un numéro de ligne rapproche, un chiffre
    * en kilomètres éloigne. Le détail vit sur /transports/.
    */
-  accesCourt: 'Ligne 85, sans correspondance',
+  accesCourt: 'La 85, puis la L5',
 } as const;
 
 /* ─────────────────────────────  CONTACT  ───────────────────────────── */

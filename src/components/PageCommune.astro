@@ -30,7 +30,7 @@ import { SITE, DESTINATION } from '../data/verite';
 import { OFFRES } from '../data/offres';
 import { route } from '../data/routes';
 import { motifs } from '../data/mots-cles';
-import { LIGNES } from '../data/transports';
+import { DEPARTS, itineraire } from '../data/transports';
 
 interface Props { id: CommuneId }
 const { id } = Astro.props;
@@ -39,8 +39,9 @@ const c = communeParId(id);
 const r = route(id);
 const autres = COMMUNES.filter((x) => x.id !== id);
 
-/** Les lignes qui desservent réellement cette commune. */
-const dessertes = LIGNES.filter((l) => l.communes.includes(c.nom));
+/** Le trajet publié pour cette commune, quand il en existe un. */
+const depart = DEPARTS.find((d) => d.depuis === c.nom);
+const trajet = depart ? itineraire(depart.itineraire) : null;
 
 /**
  * La légende : chaque recherche, et le fait qui y répond. Les réponses sont
@@ -59,7 +60,7 @@ const REPONSES: Record<string, string> = {
   [`sport de combat ${c.nom}`]: `Neuf disciplines publiées, de la Baby boxe à la préparation physique. On commence par celle qui correspond à ce qu’on cherche, on change en cours d’année si besoin.`,
   [`club kick boxing ${c.nom}`]: `Le kick-boxing est publié pour les adultes et pour les enfants/ados. C’est la boxe pieds-poings du club.`,
   [`boxe pieds poings ${c.nom}`]: `Même chose : c’est le kick-boxing. Poings et jambes, en garde haute, sur appuis.`,
-  [`club boxe thaï ${c.nom}`]: `Le club publie le kick-boxing, pas le Muay Thaï — la thaï ajoute coudes et genoux, ce qui en fait une autre discipline. Dis-le dans ton message si c’est précisément elle que tu cherches.`,
+  [`club boxe thaï ${c.nom}`]: `Le club publie le kick-boxing : poings et jambes, en garde haute. La thaï ajoute coudes et genoux — dis-le dans ton message si c’est elle que tu cherches, on te répond avec ce qui existe dans le réseau.`,
 };
 
 const LEGENDE = motifs(c.nom).map((m) => ({ motif: m, reponse: REPONSES[m] }));
@@ -117,10 +118,10 @@ const LEGENDE = motifs(c.nom).map((m) => ({ motif: m, reponse: REPONSES[m] }));
     <div class="enveloppe">
       <p class="cartouche"><span class="cartouche__num">02</span><span>Depuis {c.nom}</span></p>
       <div class="depuis__tete">
-        <h2 id="t-depuis">Ce qu’on traverse, et ce qu’on ne traverse pas.</h2>
+        <h2 id="t-depuis">La route, les lignes, et les communes voisines.</h2>
         <p class="lead faible">
           {c.population}, {c.intercommunalite}, INSEE {c.insee}. La géographie
-          n’est pas un détail quand il s’agit d’y aller deux fois par semaine.
+          compte, quand il s’agit d’y aller deux fois par semaine.
         </p>
       </div>
 
@@ -142,13 +143,13 @@ const LEGENDE = motifs(c.nom).map((m) => ({ motif: m, reponse: REPONSES[m] }));
         <article>
           <h3>Les transports</h3>
           <p>{c.transport}</p>
-          {dessertes.length > 0 && (
+          {trajet && (
             <ul class="desserte">
-              {dessertes.map((l) => (
+              {trajet.etapes.map((e) => (
                 <li>
-                  <a href={`${route('transports').chemin}?mode=${l.mode}`}>
-                    <span class={`code code--${l.mode}`}>{l.code}</span>
-                    <span>{l.parcours}</span>
+                  <a href={`${route('transports').chemin}?trajet=${trajet.id}`}>
+                    <span class={`code code--${e.mode}`}>{e.code}</span>
+                    <span>{e.de} → {e.a}</span>
                   </a>
                 </li>
               ))}

@@ -1,46 +1,40 @@
 ---
 /**
- * TRANSPORTS EN COMMUN — la page qui répond à la seule objection sérieuse.
+ * TRANSPORTS EN COMMUN — le trajet complet, de Cugnaux au 61 route d'Espagne.
  *
- * « C'est loin » n'est presque jamais une question de kilomètres : c'est une
- * question de « comment j'y vais ». Cette page répond à celle-là, mode par
- * mode, ligne par ligne, avec un lien vers l'horaire officiel à chaque fois.
- *
- * Tout le corps vit dans `components/Transports.astro`, piloté par
+ * Le corps vit dans `components/Transports.astro`, piloté par
  * `data/transports.ts` : les autres sites de la famille changent leur registre
  * et héritent de la page.
  */
 import Base from '../layouts/Base.astro';
 import Transports from '../components/Transports.astro';
 import { SITE, DESTINATION } from '../data/verite';
-import { ligne } from '../data/transports';
-
-const principale = ligne('85');
 
 const QUESTIONS = [
   {
     titre: `Quel bus va de ${SITE.ville} à ${DESTINATION.ville} ?`,
-    texte: `La ligne ${principale.code} du réseau Tisséo, ${principale.parcours}. Elle dessert ${SITE.ville} et s’arrête à ${DESTINATION.ville}, ${principale.jours}, sans correspondance. C’est le trajet le plus simple pour rejoindre ${DESTINATION.nom} sans voiture.`,
+    texte:
+      'La 85, qui traverse Cugnaux et finit son parcours à Portet Gare SNCF. Sur le parvis, la Linéo 5 repart et dessert l’arrêt « Route d’Espagne » : Boxing Center Portet-sur-Garonne est au 61 de cette rue. La 85 roule du lundi au samedi, la L5 sept jours sur sept.',
   },
   {
-    titre: 'Et le samedi, quand le club est ouvert ?',
+    titre: 'Où se fait la correspondance ?',
     texte:
-      'La 85 roule du lundi au samedi, exactement comme le club. La 321 s’arrête, elle, du lundi au vendredi ; le samedi, c’est donc la 85 qu’il faut viser. Les horaires exacts sont publiés par Tisséo, et c’est la seule source qui reste juste toute l’année.',
+      'À Portet Gare SNCF. C’est le terminus de la 85 et de la 321, et le départ de la Linéo 5 : les deux bus se prennent sur le même parvis.',
   },
   {
-    titre: 'Il y a un métro qui va au club ?',
+    titre: 'Et la 321 ?',
     texte:
-      'Pas jusqu’à la porte : la ligne A s’arrête à Basso Cambo, qui est la plaque tournante du sud-ouest toulousain. C’est là que la 85, la 321, la L11 et la 58 se retrouvent. Si tu arrives de Toulouse, tu descends à Basso Cambo et tu prends la 85.',
+      'Elle part de Frouzins Tréville, marque l’arrêt « Mairie Cugnaux » et rejoint Portet Gare SNCF en dix-neuf arrêts, du lundi au vendredi. La Linéo 5 prend le relais jusqu’à la route d’Espagne.',
   },
   {
-    titre: 'Et en train ?',
+    titre: 'Je pars de Villeneuve-Tolosane ou de Frouzins.',
     texte:
-      'La gare de Portet-Saint-Simon est dans la commune du club, sur les lignes TER liO vers Muret et l’Ariège. Elle est utile surtout si tu viens du sud de la vallée ; depuis Cugnaux, le bus reste plus direct.',
+      'La 85 marque l’arrêt « Mairie Villeneuve Tolosane » ; la 321 part de Frouzins Tréville. Les deux finissent à Portet Gare SNCF, où la L5 prend le relais jusqu’au club. Même correspondance, même arrivée.',
   },
   {
-    titre: 'Je viens de Villeneuve-Tolosane, Frouzins ou Seysses.',
+    titre: 'Le samedi, quand le club est ouvert ?',
     texte:
-      'Chaque commune a sa ligne : la 85 et la 321 pour Villeneuve-Tolosane, la 321 pour Frouzins, la 58 puis la 85 pour Seysses. Chacune a aussi sa page sur ce site, avec son accès routier et ses questions propres.',
+      'La 85 roule du lundi au samedi et la Linéo 5 sept jours sur sept : le trajet du samedi se fait exactement comme celui de la semaine. Les horaires exacts sont publiés par Tisséo.',
   },
 ];
 ---

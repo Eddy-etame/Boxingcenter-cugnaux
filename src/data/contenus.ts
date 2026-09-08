@@ -52,7 +52,7 @@ export const CONTENUS: readonly Contenu[] = [
       {
         titre: 'Est-ce que je vais prendre des coups dès le premier jour',
         texte:
-          "Non. L'opposition n'est pas le point de départ, c'est une étape qui arrive plus tard, et seulement pour celles et ceux qui la souhaitent. Un débutant travaille au sac, à la corde, aux pattes d'ours avec un coach, et sur le déplacement à vide. Beaucoup de pratiquants s'entraînent des mois sans jamais faire d'opposition — et progressent énormément.",
+          "L'opposition arrive plus tard, et seulement pour celles et ceux qui la souhaitent. Un débutant travaille au sac, à la corde, aux pattes d'ours avec un coach, et sur le déplacement à vide. Beaucoup de pratiquants s'entraînent des mois sans jamais faire d'opposition — et progressent énormément.",
       },
       {
         titre: 'Ce que ça change dans une semaine ordinaire',
@@ -81,12 +81,12 @@ export const CONTENUS: readonly Contenu[] = [
       {
         titre: 'Je suis débutant complet, à 40 ans passés. C’est trop tard ?',
         texte:
-          "Non, et c'est même le profil le plus fréquent chez les nouveaux inscrits. La boxe se règle sur celui qui la pratique : la même séance existe à trois intensités, et c'est le coach qui décide de la tienne. Ce qui compte n'est pas ton point de départ, c'est le nombre de fois où tu reviens.",
+          "C'est le profil le plus fréquent chez les nouveaux inscrits. La boxe se règle sur celui qui la pratique : la même séance existe à trois intensités, et c'est le coach qui décide de la tienne. Ce qui compte n'est pas ton point de départ, c'est le nombre de fois où tu reviens.",
       },
       {
         titre: 'Faut-il acheter du matériel avant la première séance ?',
         texte:
-          "Non. Une tenue de sport, une bouteille d'eau, une serviette. Les gants et le matériel collectif sont sur place pour découvrir. Si tu continues, tu prendras tes propres gants et tes bandes — le club te dira lesquels, et ce n'est pas un investissement lourd.",
+          "Une tenue de sport, une bouteille d'eau, une serviette : c'est tout. Les gants et le matériel collectif sont sur place pour découvrir. Si tu continues, tu prendras tes propres gants et tes bandes — le club te dira lesquels, et ce n'est pas un investissement lourd.",
       },
       {
         titre: 'Quelle différence avec le kick-boxing ?',
@@ -115,7 +115,7 @@ export const CONTENUS: readonly Contenu[] = [
           "La cage n'est pas un décor : sa paroi fait partie du jeu. On y travaille les appuis contre le grillage, les relevés, les sorties de contrôle — des situations qui n'existent tout simplement pas sur un tatami ouvert. Boxing Center Portet-sur-Garonne est le seul club du réseau à en avoir une, ce qui fait de la commune voisine de Cugnaux l'adresse la plus proche pour s'y entraîner.",
       },
       {
-        titre: 'Le grappling, pour ceux qui ne veulent pas prendre de coups',
+        titre: 'Le grappling : le combat, sans l’impact',
         texte:
           "Le grappling et le jiu-jitsu brésilien, publiés ensemble par le club, sont du MMA sans la frappe : contrôle, projections, soumissions. Aucun coup n'est porté, jamais. C'est la porte d'entrée que choisissent beaucoup de gens qui veulent le combat sans l'impact — et c'est aussi, techniquement, ce qui décide la majorité des combats de MMA.",
       },
@@ -170,7 +170,7 @@ export const CONTENUS: readonly Contenu[] = [
           "Ajouter les jambes ne double pas la difficulté : ça la multiplie. La distance n'est plus la même, la garde doit descendre sans s'ouvrir, l'appui devient un problème permanent puisqu'on frappe sur une jambe. C'est pour ça que le kick-boxing est le meilleur révélateur de niveau technique d'une salle — et pourquoi il fatigue autant la première fois.",
       },
       {
-        titre: 'Ce que le club publie, et ce qu’il ne publie pas',
+        titre: 'Ce que le club publie, mot pour mot',
         texte:
           "Boxing Center Portet-sur-Garonne publie « Kick-boxing » pour les adultes et « Kick-boxing enfants/ados » pour les plus jeunes. Il ne publie pas de créneau de Muay Thaï : la boxe thaïlandaise autorise les coudes, les genoux et le corps à corps, ce qui en fait une autre discipline avec d'autres règles. Si c'est précisément le Muay Thaï que tu cherches, dis-le dans ton message — on te répondra avec ce qui existe réellement dans le réseau.",
       },
@@ -201,12 +201,12 @@ export const CONTENUS: readonly Contenu[] = [
       {
         titre: '« Club kick boxing Cugnaux » : il faut être souple ?',
         texte:
-          "Non. La souplesse est un résultat, pas une condition d'entrée. Les premières semaines, les coups de pied restent bas — et le low kick, qui est bas par définition, est de toute façon l'arme la plus utilisée du kick-boxing. La hauteur vient toute seule avec les étirements de fin de séance.",
+          "La souplesse est un résultat, et elle vient avec les séances. Les premières semaines, les coups de pied restent bas — et le low kick, qui est bas par définition, est de toute façon l'arme la plus utilisée du kick-boxing. La hauteur vient toute seule avec les étirements de fin de séance.",
       },
       {
         titre: '« Boxe pieds poings Cugnaux » : c’est pour les jeunes seulement ?',
         texte:
-          "Non. Le club publie un créneau adulte et un créneau enfants/ados, distincts. Beaucoup d'adultes arrivent au kick-boxing après quelques mois de boxe anglaise, parce qu'ils veulent élargir ; d'autres commencent directement par là. Les deux fonctionnent.",
+          "Le club publie un créneau adulte et un créneau enfants/ados, distincts. Beaucoup d'adultes arrivent au kick-boxing après quelques mois de boxe anglaise, parce qu'ils veulent élargir ; d'autres commencent directement par là. Les deux fonctionnent.",
       },
       {
         titre: 'Mon fils fait déjà du foot : les deux sont compatibles ?',
@@ -225,7 +225,7 @@ export const CONTENUS: readonly Contenu[] = [
     promesse: 'Un cadre, une règle, et un enfant qui apprend à se contenir avant d’apprendre à frapper.',
     blocs: [
       {
-        titre: 'Ce qu’un enfant apprend d’abord, et ce n’est pas frapper',
+        titre: 'Ce qu’un enfant apprend d’abord : se tenir, regarder, attendre',
         texte:
           "Il apprend à se tenir, à regarder, à attendre son tour, à s'arrêter net quand on le lui demande. La frappe arrive après, et toujours contrôlée. Les parents qui viennent chercher un défouloir repartent souvent surpris : ce que la boxe éducative installe en premier, c'est un cadre — et c'est précisément ce cadre qui calme les enfants qu'on lui amène pour ça.",
       },
@@ -237,7 +237,7 @@ export const CONTENUS: readonly Contenu[] = [
       {
         titre: 'Est-ce que mon enfant va prendre des coups',
         texte:
-          "Non. Le travail se fait au touché contrôlé : on cible, on effleure, on ne charge pas. Les protections sont adaptées à la taille et l'opposition libre n'existe pas dans ces créneaux. Un enfant qui se fait mal en boxe éducative, c'est un incident, pas une étape du programme.",
+          "Le travail se fait au touché contrôlé : on cible, on effleure, on dose. Les protections sont adaptées à la taille et l'opposition libre n'existe pas dans ces créneaux. Un enfant qui se fait mal en boxe éducative, c'est un incident, pas une étape du programme.",
       },
       {
         titre: 'Depuis Cugnaux, le trajet d’un parent',
@@ -271,7 +271,7 @@ export const CONTENUS: readonly Contenu[] = [
       {
         titre: 'Il faut acheter des gants tout de suite ?',
         texte:
-          "Non, pas pour découvrir. Une tenue de sport et une bouteille d'eau suffisent pour les premières séances. Si ton enfant continue, le club te dira quel matériel prendre et à quelle taille — inutile d'anticiper, les mains grandissent vite.",
+          "Une tenue de sport et une bouteille d'eau suffisent pour les premières séances. Si ton enfant continue, le club te dira quel matériel prendre et à quelle taille — inutile d'anticiper, les mains grandissent vite.",
       },
     ],
   },
@@ -316,7 +316,7 @@ export const CONTENUS: readonly Contenu[] = [
       {
         titre: '« Boxing fitness Cugnaux » : je vais devoir combattre ?',
         texte:
-          "Jamais, si tu ne le demandes pas. Le boxing fitness et la préparation physique n'ont pas d'opposition au programme. Tu peux pratiquer des années sans jamais faire face à quelqu'un — et beaucoup de gens font exactement ça.",
+          "Le boxing fitness et la préparation physique se pratiquent sans opposition, du début à la fin. Tu peux pratiquer des années sans jamais faire face à quelqu'un — et beaucoup de gens font exactement ça.",
       },
       {
         titre: 'Le Lady Boxing est réservé aux femmes ?',
