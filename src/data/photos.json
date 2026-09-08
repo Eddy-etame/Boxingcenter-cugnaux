@@ -1,0 +1,68 @@
+{
+  "club-boxe-cugnaux": {
+    "lqip": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADQAwCdASoUAA0APxFysVAsJqSisAgBgCIJZACdMoACsszYN1bIaQAA/uQbxoO4Lyp/Ipj93g2MgPvvWhaaePAZZ3co280DjxVNAAAA",
+    "w": 6720,
+    "h": 4247,
+    "ratio": 1.5823
+  },
+  "cage-mma-cugnaux": {
+    "lqip": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACQAwCdASoUAA0APxFysVCsJqSisAgBgCIJQBWAA8FPBkfeOKNoAP7AawlzrOL8Fm+GR7awwSa6kRaML71Aephxyw6QwL/FJ38BJogA",
+    "w": 6720,
+    "h": 4480,
+    "ratio": 1.5
+  },
+  "preparation-physique-cugnaux": {
+    "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAACwAwCdASoUAAsAPxFysVCsJqSisAgBgCIJQBOgBDUn7PosJcBDYAD+z91YSm+qbbZ/KNTJdW2mWinW3oWCz0/5PSnKJsAA",
+    "w": 6720,
+    "h": 3575,
+    "ratio": 1.8797
+  },
+  "pattes-d-ours-cugnaux": {
+    "lqip": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACQAwCdASoUAA0APxFysVCsJqSisAgBgCIJQBhQBDMx6ZajQ/FAAP6DM7RwGBKhxTImzOsWAW8vgROhv0w9pyiZ+/O8XonGjJuQAA==",
+    "w": 6720,
+    "h": 4480,
+    "ratio": 1.5
+  },
+  "boxe-anglaise-cugnaux": {
+    "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAABwAwCdASoUAA0APxF2slEsJySisAgBgCIJYwAAXFIr9WC7t4AA/tDNEqeTpRhG0noh7Fs6sC/HUEqpExgkg364+z9pE0Q5ASyxQyAegPDeAAAA",
+    "w": 6720,
+    "h": 4480,
+    "ratio": 1.5
+  },
+  "boxe-enfant-cugnaux": {
+    "lqip": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADQAwCdASoUAA0APxF0slCsJqSisAgBgCIJQBUehDn1puWWj/KpzAAA/tzJ/fv0vEQwaA69DU0QN1L+EU7rOrzUrW+WsBRQhvleAAAA",
+    "w": 6306,
+    "h": 4027,
+    "ratio": 1.5659
+  },
+  "sac-de-frappe-cugnaux": {
+    "lqip": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADwAwCdASoUAA0APxF2sVAsJ6SisAgBgCIJZQCo9B4aR6O46iIXBNeAAP7L1hmblJzOagYrzfD1JMTNzhTI3kiqiG0wAA==",
+    "w": 6720,
+    "h": 4480,
+    "ratio": 1.5
+  },
+  "ring-de-boxe-cugnaux": {
+    "lqip": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAABQBACdASoUABsAPwVwsFArpqUisAwBcCCJYwDE2BS7SZY7mkt3VLxI+TE4AP0fqMvPoO13uooYLuiyD9iYlAp9L0YXNpTIT9kcMalyxgrZrzU0T746j7A8vz0tJgAA",
+    "w": 768,
+    "h": 1024,
+    "ratio": 0.75
+  },
+  "salle-de-boxe-cugnaux": {
+    "lqip": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAACQBACdASoUABsAPxF4tFIsJyUisBgIAYAiCWYAsR7iMHBVKv/9aPKq74VrptAA/hfzaMdWuWPNXppI6T2aAoPC7pY9JngQOW4J03stDoXYSnXZj9q9b35pr/QHrYFSWaKZpupKfq+LtpWGUKmrpdTJYqozMGcNQAA=",
+    "w": 768,
+    "h": 1024,
+    "ratio": 0.75
+  },
+  "sac-de-frappe-cugnaux-2": {
+    "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAABQBQCdASoUABsAPxFssFEsJbQisBgMAoAiCWgAnTKEgrq/gNZbeXyeCL0Sz/cRwtymUgAA/nJhbU65EU/FPXsRGKRSpH7IqNYEsyQ55i3lL+wNGkDCetwmBsnINFgi2NYiNrwNJebF0A1C5Gxx1PeH8IUpeid23odDhzQDUrgAAA==",
+    "w": 768,
+    "h": 1024,
+    "ratio": 0.75
+  },
+  "poires-de-vitesse-cugnaux": {
+    "lqip": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAACwAwCdASoUAA8APxFysFAsJqSisAgBgCIJZgCdMoABeZPyK1KUkgD6NCUk1heAcOLF2y+qFMV5Hlaik45MMrnEiincOt8Nh2/ANSf7O4gAAA==",
+    "w": 1024,
+    "h": 768,
+    "ratio": 1.3333
+  }
+}

@@ -1,0 +1,198 @@
+/**
+ * REGISTRE DE VÉRITÉ — Boxing Center depuis Cugnaux.
+ *
+ * Un fait s'écrit ICI une fois, avec sa source et sa date, puis se projette
+ * dans le HTML, les métadonnées, le JSON-LD, llms.txt, le formulaire et le
+ * moteur. Aucun composant n'écrit un horaire, une adresse ou une URL en dur —
+ * le contrôle de build le refuse.
+ *
+ * Ce qui n'est pas vérifié ne s'affiche pas. On n'invente ni distance au
+ * mètre, ni temps de trajet, ni prix, ni tranche d'âge.
+ *
+ * Le fait qui porte tout ce site : Cugnaux et Portet-sur-Garonne sont deux
+ * communes limitrophes. Ce n'est pas « à proximité » au sens vague — c'est la
+ * commune d'à côté, et une limite communale est un fait cadastral, pas une
+ * appréciation.
+ */
+
+export type Source = 'site-club' | 'wikipedia' | 'cahier-des-charges' | 'a-verifier';
+
+export type Fait<T = string> = { valeur: T; source: Source; verifie: string };
+
+const CLUB = (v: string): Fait => ({ valeur: v, source: 'site-club', verifie: '2026-09-08' });
+const WIKI = (v: string): Fait => ({ valeur: v, source: 'wikipedia', verifie: '2026-09-08' });
+
+/* ─────────────────────────────  LE SITE  ───────────────────────────── */
+
+export const SITE = {
+  origine: 'https://www.boxingcenter-cugnaux.fr',
+  nom: 'Boxing Center — depuis Cugnaux',
+  nomCourt: 'Boxing Center Cugnaux',
+  langue: 'fr-FR',
+  /** Cugnaux est le point de départ du visiteur, jamais une adresse de club. */
+  ville: 'Cugnaux',
+  codePostal: '31270',
+  gentile: 'Cugnalais',
+  departement: 'Haute-Garonne',
+  secteur: 'sud-ouest toulousain',
+  /**
+   * Le formulaire Inlet de CE site. Chaque site a le sien : une demande
+   * arrive donc déjà triée par ville, sans qu'on ait à le deviner au texte.
+   */
+  formulaire: '6dbb76b6-f146-4d5e-a10c-411bbb667254',
+  /**
+   * L'accès en trois mots, pour le pied de hero. Jamais un temps de trajet,
+   * jamais un nombre de kilomètres : un numéro de ligne rapproche, un chiffre
+   * en kilomètres éloigne. Le détail vit sur /transports/.
+   */
+  accesCourt: 'Ligne 85, sans correspondance',
+} as const;
+
+/* ─────────────────────────────  CONTACT  ───────────────────────────── */
+
+export const CONTACT = {
+  telephone: CLUB('05 62 24 46 82'),
+  telephoneLien: CLUB('+33562244682'),
+  email: CLUB('bc.combat31@gmail.com'),
+} as const;
+
+/* ─────────────────────────────  LE CLUB  ───────────────────────────── */
+
+export type Club = {
+  id: 'portet';
+  nom: string;
+  nomCourt: string;
+  ville: string;
+  codePostal: string;
+  adresse: string;
+  telephone: string;
+  telephoneLien: string;
+  site: string;
+  activites: string;
+  plannings: string;
+  tarifs: string;
+  /** amplitude d'accueil publiée par le club */
+  horaires: Fait;
+  horairesCourt: string;
+  ouverture: string;
+  fermeture: string;
+  ouvertureTexte: string;
+  fermetureTexte: string;
+  /** l'accès réel depuis Cugnaux, sans temps de trajet inventé */
+  acces: string;
+  /** le fait qui distingue ce club de tous les autres */
+  singularite: string;
+  /** faits chiffrés, pour les cotes du hero */
+  faits: readonly { cle: string; valeur: string; source: string }[];
+  angle: string;
+};
+
+export const CLUBS: readonly Club[] = [
+  {
+    id: 'portet',
+    nom: 'Boxing Center Portet-sur-Garonne',
+    nomCourt: 'Portet-sur-Garonne',
+    ville: 'Portet-sur-Garonne',
+    codePostal: '31120',
+    adresse: "61 route d'Espagne, 31120 Portet-sur-Garonne",
+    telephone: '06 87 90 02 16',
+    telephoneLien: '+33687900216',
+    site: 'https://boxing-center-portet.fr/',
+    activites: 'https://boxing-center-portet.fr/activites/',
+    plannings: 'https://boxing-center-portet.fr/plannings/',
+    tarifs: 'https://boxing-center-portet.fr/tarifs/',
+    horaires: CLUB('du lundi au samedi, de 10h à 21h30'),
+    horairesCourt: 'lun–sam, 10h–21h30',
+    ouverture: '10:00',
+    fermeture: '21:30',
+    ouvertureTexte: '10h',
+    fermetureTexte: '21h30',
+    acces:
+      "Par la route de Toulouse puis la D63, ou par la rocade : Cugnaux et Portet-sur-Garonne se touchent, et le club est au 61 route d'Espagne.",
+    singularite: 'Le seul club du réseau avec une cage MMA.',
+    faits: [
+      { cle: 'Voisinage', valeur: 'communes limitrophes', source: 'Wikipédia' },
+      { cle: 'Surface', valeur: '600 m²', source: 'boxing-center-portet.fr' },
+      { cle: 'Équipement', valeur: '1 ring, 1 cage MMA', source: 'boxing-center-portet.fr' },
+      { cle: 'Accueil', valeur: '10h → 21h30, 6 j/7', source: 'boxing-center-portet.fr' },
+      { cle: 'Disciplines', valeur: '9 publiées', source: 'boxing-center-portet.fr' },
+    ],
+    angle:
+      "Le club du sud-ouest de l'agglomération, sur la route d'Espagne — celui qu'on rejoint depuis Cugnaux en franchissant une seule limite communale, avec du stationnement simple.",
+  },
+] as const;
+
+export const club = (id: Club['id'] = 'portet'): Club => {
+  const c = CLUBS.find((x) => x.id === id);
+  if (!c) throw new Error(`Club inconnu : ${id}`);
+  return c;
+};
+
+/** Le club de destination du site. Une seule destination ici. */
+export const DESTINATION = CLUBS[0];
+
+/* ────────────────────────  CUGNAUX, LES FAITS  ──────────────────────── */
+
+export const VILLE = {
+  population: WIKI('20 662 habitants (2023)'),
+  statut: WIKI('commune de Toulouse Métropole'),
+  distance: WIKI('11 km au sud-ouest de Toulouse'),
+  rivieres: WIKI('le canal de Saint-Martory, l’Ousseau et le Roussimort'),
+  routes: WIKI('la route de Toulouse et la D63, la rocade par Portet'),
+  bus: WIKI('les lignes Tisséo L11, 48, 53, 58, 85, 87 et 321, vers le métro à Basso Cambo'),
+  aerodrome: WIKI('l’aérodrome de Toulouse-Francazal, dédié à l’aviation d’affaires'),
+  /** Le fait local qui donne son identité au site. */
+  figure: WIKI(
+    'l’église Saint-Laurent, reconstruite après l’incendie de 1824 et livrée au culte en 1827'
+  ),
+  histoire: WIKI(
+    'moins de 1 000 habitants en 1936, plus de 20 000 en 2023 : Cugnaux s’est bâtie en une vie d’homme'
+  ),
+} as const;
+
+/**
+ * La phrase qui relie le secteur au club, quand un fait honnête le permet.
+ * Vide si aucun lien géographique réel n'existe — on n'en invente pas.
+ */
+export const NOTE_SECTEUR =
+  'Cugnaux touche Portet-sur-Garonne : la limite communale passe entre les deux, et le club est juste de l’autre côté.';
+
+/** Les cinq communes limitrophes. Portet en fait partie : c'est tout le site. */
+export const LIMITROPHES: readonly { nom: string; note?: string }[] = [
+  { nom: 'Plaisance-du-Touch' },
+  { nom: 'Portet-sur-Garonne', note: 'la commune du club' },
+  { nom: 'Toulouse' },
+  { nom: 'Tournefeuille' },
+  { nom: 'Villeneuve-Tolosane' },
+] as const;
+
+/* ─────────────────────────  CE QU'ON NE DIT PAS  ───────────────────── */
+
+/** Laisser croire qu'une salle est DANS Cugnaux. Refusé au build. */
+export const INTERDIT: readonly string[] = [
+  'salle de Cugnaux',
+  'notre salle à Cugnaux',
+  'notre club à Cugnaux',
+  'situé à Cugnaux',
+  'située à Cugnaux',
+  'basé à Cugnaux',
+  'Boxing Center Cugnaux vous accueille',
+];
+
+/** Vendre l'absence. La faute la plus coûteuse. Refusée au build. */
+export const VENTE_NEGATIVE: readonly string[] = [
+  'pas de salle',
+  'pas de club',
+  'aucune salle',
+  'aucun club',
+  'n’existe pas de salle',
+  "n'existe pas de salle",
+];
+
+/** Formulations justes, à reprendre telles quelles. */
+export const FORMULATIONS = [
+  'club de boxe à proximité de Cugnaux',
+  'club de MMA près de Cugnaux',
+  'cours accessibles depuis Cugnaux',
+  'Boxing Center accueille les Cugnalais dans son club de Portet-sur-Garonne, la commune limitrophe',
+] as const;
