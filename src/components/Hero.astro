@@ -36,23 +36,23 @@ const disciplines = cotes[4].valeur;
 <section class="hero" aria-labelledby="t-hero">
   <div class="enveloppe">
     <p class="hero__cartouche mono">
-      <span class="hero__planche">Planche 01</span>
+      <span class="hero__planche">Boxing Center</span>
       <span aria-hidden="true">·</span>
-      <span>{SITE.ville} → {DESTINATION.ville}</span>
+      <span>à proximité de {SITE.ville}</span>
     </p>
 
     <div class="hero__haut">
       <div class="hero__texte">
         <h1 id="t-hero" class="hero__titre">
-          <span class="hero__ligne">Un club de boxe et de MMA</span>
-          <span class="hero__ligne">pour les Cugnalais,</span>
-          <span class="hero__ligne hero__ligne--accent">à Portet-sur-Garonne.</span>
+          <span class="hero__ligne">Ton club de boxe</span>
+          <span class="hero__ligne">et de MMA</span>
+          <span class="hero__ligne hero__ligne--accent">à proximité de {SITE.ville}.</span>
         </h1>
 
         <p class="hero__promesse">
-          <strong>Boxing Center Portet-sur-Garonne</strong> : boxe anglaise, MMA,
-          kick-boxing, grappling et cours enfants. 600 m², un ring, une cage.
-          Ouvert {DESTINATION.horaires.valeur}. Tu peux venir sans avoir jamais boxé.
+          <strong>Boxe anglaise, MMA, kick-boxing, grappling et cours enfants</strong>,
+          à deux pas de chez toi. 600 m², un ring, une cage. Ouvert
+          {DESTINATION.horaires.valeur}. Tu peux venir sans avoir jamais boxé.
         </p>
 
         <div class="hero__actions">
@@ -68,6 +68,10 @@ const disciplines = cotes[4].valeur;
       </div>
 
       <dl class="hero__faits">
+        <div>
+          <dt class="mono">Le club</dt>
+          <dd>{DESTINATION.nomCourt}, la commune voisine</dd>
+        </div>
         <div>
           <dt class="mono">Accueil</dt>
           <dd>{DESTINATION.horairesCourt}</dd>
@@ -337,13 +341,14 @@ const disciplines = cotes[4].valeur;
 
   .hero__ligne {
     animation: poser 720ms var(--e-sortie) both;
-    animation-delay: calc(var(--i, 0) * 90ms);
+    animation-delay: calc(var(--i, 0) * 130ms);
   }
   .hero__ligne:nth-child(1) { --i: 0; }
   .hero__ligne:nth-child(2) { --i: 1; }
   .hero__ligne:nth-child(3) { --i: 2; }
+  .hero__ligne { animation-duration: 900ms; }
   @keyframes poser {
-    from { opacity: 0; transform: translateY(0.5em); }
+    from { opacity: 0; transform: translateX(-0.55em); }
     to { opacity: 1; transform: none; }
   }
 

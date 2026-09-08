@@ -91,6 +91,18 @@
   --nav-fonce: #0b242b;
   --nav-ombre: rgba(17, 49, 58, 0.85);
 
+  /* ── Signature de mouvement ─────────────────────────────────────────
+     Cugnaux : le glissement latéral. Les blocs entrent par la gauche, lentement,
+     avec un écart plus large entre eux.
+     Aucun site de la famille n'entre de la même façon : c'est ce qui
+     empêche deux sites de donner la même sensation au scroll. */
+  --mouv-x: -1.6rem;
+  --mouv-y: 0.4rem;
+  --mouv-echelle: 1;
+  --mouv-duree: 1s;
+  --mouv-decalage: 130ms;
+  --mouv-courbe: cubic-bezier(0.16, 0.84, 0.24, 1);
+
   /* Polarité par défaut : papier. Une section peut basculer en encre. */
   --fond: var(--papier);
   --texte: var(--encre);
