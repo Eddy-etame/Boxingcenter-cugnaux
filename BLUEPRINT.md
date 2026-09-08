@@ -37,7 +37,7 @@ Redirections : `/club-boxe-cugnaux`, `/club-mma-cugnaux`, `/salle-mma-cugnaux`, 
 | PORTET_037 | `cours-boxe-pattes-ours-cugnaux.webp` | première séance / femme | Une pratiquante frappe la patte d'ours orange tenue par un coach |
 | PORTET_021 | `preparation-physique-cugnaux.webp` | prépa physique | Vélos et rameur sur le gazon de l'espace cardio |
 | WhatsApp ×4 | `ring-de-boxe-cugnaux.webp`, `sacs-de-frappe-cugnaux.webp`, `poires-de-vitesse-cugnaux.webp`, `salle-de-boxe-cugnaux.webp` | vignettes uniquement (0,8 Mpx) | le ring et les sacs ; les sacs sous les drapeaux ; les poires de vitesse ; la salle vue du ring |
-Puis : les non-utilisées de Colomiers, légendées « … — Boxing Center » sans nommer de salle ; puis les Portet du lot Muret non utilisées (051 reste le hero de Muret, 014 celui de Cugnaux — jamais le même).
+Puis : les non-utilisées de Colomiers, légendées « … — Boxing Center Portet-sur-Garonne » ; puis les Portet du lot Muret non utilisées (051 reste le hero de Muret, 014 celui de Cugnaux — jamais le même).
 
 ## Système visuel — sous-famille Portet (papier `#f3efe6` · encre `#1e2044` · cuivre : texte `#7a3d16`, aplats `#b8763a` — loi commune §7), hero de la direction retenue, **cadrage et photo différents de Muret**.
 
