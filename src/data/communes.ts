@@ -143,7 +143,7 @@ export const COMMUNES: readonly Commune[] = [
       {
         titre: 'Depuis Frouzins, quel est le chemin le plus simple ?',
         texte:
-          'Deux itinéraires, aussi directs l’un que l’autre : par la D68 et Villeneuve-Tolosane, puis la RN 264 ; ou par Roques et la route d’Espagne. Frouzins ne touche pas Portet-sur-Garonne, mais elle touche les deux communes qui la touchent — il n’y a donc qu’un seul passage à faire.',
+          'Le trajet se fait de deux façons, aussi directes l’une que l’autre : par la D68 et Villeneuve-Tolosane, puis la RN 264 ; ou par Roques et la route d’Espagne. Frouzins ne touche pas Portet-sur-Garonne, mais elle touche les deux communes qui la touchent — il n’y a donc qu’un seul passage à faire.',
       },
       {
         titre: 'Frouzins ou Cugnaux : même club, même planning ?',
@@ -158,7 +158,7 @@ export const COMMUNES: readonly Commune[] = [
       {
         titre: 'Il y a des créneaux pour les enfants de Frouzins ?',
         texte:
-          'Oui : Baby boxe, boxe éducative et kick-boxing enfants/ados figurent parmi les neuf disciplines publiées par le club. Le principe est constant — le geste, la règle, le respect du partenaire, et le touché contrôlé.',
+          'Oui : Baby boxe, boxe éducative et kick-boxing enfants/ados figurent parmi les disciplines publiées par le club. Le principe est constant — le geste, la règle, le respect du partenaire, et le touché contrôlé.',
       },
     ],
   },

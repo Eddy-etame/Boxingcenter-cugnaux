@@ -11,7 +11,8 @@
  *
  * Depuis Cugnaux, la correspondance se fait à Portet Gare SNCF : c'est le
  * terminus de la 85 et de la 321, et le départ de la Linéo 5, qui dessert
- * l'arrêt « Route d'Espagne ».
+ * l'arrêt « Jean Jaurès », sur la route d'Espagne à Portet — le premier
+ *   arrêt après le terminus, et le seul qui dépose devant le club.
  *
  * Ce qu'on n'écrit JAMAIS ici : un horaire, une fréquence à la minute, une
  * durée de trajet. Chaque étape porte le lien vers sa page officielle : c'est
@@ -49,16 +50,16 @@ export const RESEAU = {
 export const LIBELLE_MODE: Record<Mode, string> = { bus: 'Bus', train: 'Train' };
 
 export const ARRIVEE = {
-  arret: 'Route d’Espagne',
+  arret: 'Jean Jaurès',
   rue: 'route d’Espagne',
-  phrase: 'Tu descends à l’arrêt « Route d’Espagne ». Le club est au 61 de cette rue.',
+  phrase: 'Tu descends à « Jean Jaurès », sur la route d’Espagne. Le club est au 61.',
 } as const;
 
 const L5 = {
   mode: 'bus',
   code: 'L5',
   de: 'Portet Gare SNCF',
-  a: 'Route d’Espagne',
+  a: 'Jean Jaurès',
   precision: 'le Linéo part du parvis de la gare, sept jours sur sept jusqu’à minuit passé',
   jours: 'sept jours sur sept',
   href: 'https://www.tisseo.fr/nos-mobilites/transports-en-commun/ligne-l5',
@@ -73,7 +74,7 @@ export const TITRE = [
 
 /** Le chapeau : ce que fait le meilleur trajet, en une phrase. */
 export const CHAPEAU =
-  'Tu prends la 85 à Cugnaux et tu descends à Portet Gare SNCF. Tu traverses le parvis, tu prends la L5, et tu descends à l’arrêt « Route d’Espagne ». Le club est au 61 de cette rue. La 85 roule du lundi au samedi, la L5 tous les jours.';
+  'Tu prends la 85 à Cugnaux et tu descends à Portet Gare SNCF. Tu traverses le parvis, tu prends la L5, et tu descends au premier arrêt : « Jean Jaurès », sur la route d’Espagne. Le club est au 61. La 85 roule du lundi au samedi, la L5 tous les jours.';
 
 export const ITINERAIRES: readonly Itineraire[] = [
   {
@@ -81,7 +82,7 @@ export const ITINERAIRES: readonly Itineraire[] = [
     onglet: 'La 85, puis la L5',
     titre: 'La 85, puis la L5.',
     resume:
-      'La 85 traverse Cugnaux et s’arrête à Portet Gare SNCF. La L5 part du même endroit, sur le parvis, et te dépose à l’arrêt « Route d’Espagne ». Le club est au 61. La 85 roule du lundi au samedi, comme le club ; la L5 tous les jours, jusqu’à minuit passé.',
+      'La 85 traverse Cugnaux et s’arrête à Portet Gare SNCF. La L5 part du même endroit, sur le parvis, et te dépose au premier arrêt, « Jean Jaurès », sur la route d’Espagne. Le club est au 61. La 85 roule du lundi au samedi ; la L5 tous les jours, jusqu’à minuit passé.',
     mode: 'bus',
     meilleur: true,
     etapes: [
