@@ -36,13 +36,7 @@ export const CONTEXTE_GEO = {
 export const CLUSTERS: readonly Cluster[] = [
   {
     page: 'accueil',
-    prioritaires: [
-      'club de boxe Cugnaux',
-      'sport de combat Cugnaux',
-      'MMA',
-      'Portet-sur-Garonne',
-      'commune limitrophe',
-    ],
+    prioritaires: ['club de boxe', 'Cugnaux', 'sport de combat', 'MMA', 'Portet-sur-Garonne'],
     secondaires: [
       'boxe Cugnaux',
       'club de boxe près de Cugnaux',
@@ -66,7 +60,7 @@ export const CLUSTERS: readonly Cluster[] = [
   },
   {
     page: 'boxe-anglaise',
-    prioritaires: ['boxe anglaise Cugnaux', 'débutant'],
+    prioritaires: ['boxe anglaise', 'Cugnaux', 'débutant'],
     secondaires: [
       'cours de boxe Cugnaux',
       'club de boxe Cugnaux',
@@ -81,7 +75,7 @@ export const CLUSTERS: readonly Cluster[] = [
   },
   {
     page: 'mma',
-    prioritaires: ['club MMA Cugnaux', 'salle MMA Cugnaux', 'grappling', 'cage'],
+    prioritaires: ['MMA', 'Cugnaux', 'grappling', 'cage'],
     secondaires: [
       'cours MMA Cugnaux',
       'MMA débutant Cugnaux',
@@ -96,11 +90,7 @@ export const CLUSTERS: readonly Cluster[] = [
   },
   {
     page: 'kick-boxing',
-    prioritaires: [
-      'club kick boxing Cugnaux',
-      'boxe pieds poings Cugnaux',
-      'club boxe thaï Cugnaux',
-    ],
+    prioritaires: ['kick-boxing', 'Cugnaux', 'pieds-poings', 'boxe thaï'],
     secondaires: [
       'kick-boxing Cugnaux',
       'kickboxing Cugnaux',
@@ -113,7 +103,7 @@ export const CLUSTERS: readonly Cluster[] = [
   },
   {
     page: 'boxe-enfants',
-    prioritaires: ['boxe enfant Cugnaux', 'boxe éducative', 'Baby boxe'],
+    prioritaires: ['boxe enfant', 'Cugnaux', 'boxe éducative', 'Baby boxe'],
     secondaires: [
       'cours de boxe enfant Cugnaux',
       'Baby boxe Cugnaux',
@@ -125,7 +115,7 @@ export const CLUSTERS: readonly Cluster[] = [
   },
   {
     page: 'boxing-fitness',
-    prioritaires: ['boxing fitness Cugnaux', 'femme'],
+    prioritaires: ['boxing fitness', 'Cugnaux', 'femme'],
     secondaires: [
       'boxe femme Cugnaux',
       'Lady Boxing',
@@ -243,7 +233,7 @@ export const CLUSTERS: readonly Cluster[] = [
 export const cluster = (page: RouteId) => CLUSTERS.find((c) => c.page === page);
 
 /**
- * Les neuf motifs imposés, instanciés sur un lieu.
+ * Les motifs exacts, instanciés sur un lieu.
  *
  * Ils servent la « légende » des pages communes : la colonne de gauche cite la
  * recherche telle qu'elle se tape, la colonne de droite y répond par un fait.

@@ -41,7 +41,7 @@ export type Commune = {
   transport: string;
   /** un fait local honnête, qui sert à situer et jamais à décorer */
   faitLocal: string;
-  /** ce que ce fait local apprend, en une phrase — le liant vers le sport */
+  /** l'info pratique qui suit, en une phrase */
   faitLocalEcho: string;
   photo: MediaSlug;
   /** les quatre cotes du plan de la page */
@@ -73,9 +73,9 @@ export const COMMUNES: readonly Commune[] = [
     transport:
       'Les lignes Tisséo 47, 57 et 58 desservent la commune et rejoignent le métro à Basso Cambo.',
     faitLocal:
-      'Sous les lotissements dort l’un des plus grands villages néolithiques connus du Midi : plusieurs centaines de « fonds de cabane » chasséens, fouillés depuis les années 1960.',
+      'Villeneuve-Tolosane est la commune la mieux desservie du secteur pour aller au club : la 85 et la 321 s’y arrêtent toutes les deux, et toutes les deux finissent à Portet Gare SNCF.',
     faitLocalEcho:
-      'On s’entraîne ici depuis six mille ans à répéter le même geste jusqu’à ce qu’il tienne. Le nôtre est plus récent, la méthode n’a pas changé.',
+      'À la gare, tu prends la L5 et tu descends route d’Espagne. Le club est au 61.',
     photo: 'boxe-anglaise-cugnaux',
     cotes: [
       { cle: 'Limite', valeur: 'commune limitrophe du club' },
@@ -126,9 +126,9 @@ export const COMMUNES: readonly Commune[] = [
     transport:
       'Le Linéo L11 relie le complexe sportif à Basso Cambo ; les lignes 58, 87 et 321 desservent le reste de la commune.',
     faitLocal:
-      'Le pigeonnier du parc Saint-Germier, bâti en 1670, tient sur six piliers au lieu des quatre habituels — une exception locale que les inventaires signalent encore.',
+      'La 321 part de Frouzins Tréville et finit à Portet Gare SNCF : c’est la seule ligne du secteur qui fait le trajet sans passer par Toulouse.',
     faitLocalEcho:
-      'Deux appuis de plus, et ça tient depuis trois siècles et demi. C’est aussi la première chose qu’on apprend en boxe : rien ne part des bras.',
+      'Elle roule du lundi au vendredi. Le samedi, passe par Villeneuve-Tolosane et prends la 85.',
     photo: 'boxe-enfant-cugnaux',
     cotes: [
       { cle: 'Limite', valeur: 'une commune d’écart' },
@@ -179,9 +179,9 @@ export const COMMUNES: readonly Commune[] = [
     transport:
       'La ligne Tisséo 58 rejoint le métro à Basso Cambo ; la ligne 315 dessert la gare de Muret, sur la ligne TER Toulouse–Bayonne.',
     faitLocal:
-      'L’église Saint-Blaise, inscrite aux monuments historiques depuis 1926, abrite un orgue Puget de 1867 — l’atelier toulousain qui a équipé la moitié des tribunes du Sud-Ouest.',
+      'Seysses est sur l’A64 à la sortie 35, et touche Muret. En voiture, tu remontes vers Portet ; en bus, la 58 t’emmène à Basso Cambo, où la 85 repart vers la gare de Portet.',
     faitLocalEcho:
-      'Un instrument fabriqué à quinze kilomètres de là, et qui joue encore. Les bonnes choses du secteur ne viennent pas de loin.',
+      'À la gare de Portet, la L5 te dépose route d’Espagne, devant le club.',
     photo: 'sac-de-frappe-cugnaux',
     cotes: [
       { cle: 'Limite', valeur: 'touche Muret et Frouzins' },

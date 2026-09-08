@@ -1,22 +1,25 @@
 /*
-  JETONS — Boxing Center depuis Muret. Sous-famille Portet.
+  JETONS — Boxing Center depuis Cugnaux.
 
-  Thèse : LE PLAN ET LA SUEUR.
-  L'interface est un dessin d'ingénieur — papier, encre, cotes, traits fins.
-  La photographie apporte le cuir, la sueur et le bruit. Le plan sait où on va ;
-  la photo dit ce qu'on y trouve. Ni l'un ni l'autre ne cède.
+  La couleur vient de la salle. Le sol de la salle des sacs est turquoise, et
+  c'est la première chose qu'on voit sur la photo d'accueil : le site prend
+  cette teinte-là. Chaque site de la famille a la sienne, pour qu'on ne les
+  confonde jamais — même structure, même typographie, autre couleur.
 
-  Muret est la ville de Clément Ader : le trait coté n'est pas une décoration,
-  c'est la langue de l'endroit.
-
-  LOI DE COULEUR : le cuivre est la seconde couleur du logo Boxing Center et
-  n'appartient à aucune salle. Ici il ne veut pas dire « boxe » — il dit
-  « ce point est établi ». Il se tend à mesure que le visiteur décide.
+  Le bleu-vert ne veut pas dire « boxe ». Il dit « ce point est établi » : il
+  se tend à mesure que le visiteur décide.
 
   CONTRASTES MESURÉS (formule WCAG, 2026-09-08) :
-    encre #1e2044 sur papier #f3efe6 ...... 13,6:1
-    cuivre texte #7a3d16 sur papier ....... 7,3:1   (AA, y compris petit texte)
-    cuivre aplat #b8763a sur papier ....... 3,2:1   (aplats et très gros titres seulement)
+    encre #11313a sur papier #edf1f1 ......... 12,1:1
+    accent texte #0f5c6a sur papier .......... 6,7:1  (AA, y compris petit texte)
+    accent texte #0f5c6a sur papier creusé ... 6,1:1
+    graphite #4e6870 sur papier .............. 5,2:1
+    graphite #4e6870 sur papier creusé ....... 4,7:1
+    aplat #1f8a9c sur papier ................. 3,6:1  (aplats et gros titres seulement)
+  Sur fond encre :
+    papier sur encre ......................... 12,1:1
+    accent clair #6fc7d6 ..................... 7,1:1
+    graphite clair #8fa8b0 ................... 5,5:1
 */
 
 @font-face {
@@ -58,27 +61,35 @@
 
 :root {
   /* ── Couleur ───────────────────────────────────────────────────────── */
-  --papier: #f3efe6;      /* le fond, chaud — jamais le blanc d'une page de logiciel */
-  --papier-creuse: #eae4d7; /* la deuxième teinte du papier : plaques, tableaux */
-  --papier-vif: #fbf8f2;  /* les cartes qui se détachent du papier */
-  --encre: #1e2044;       /* le navy Boxing Center, la couleur du trait */
-  --encre-pale: #4a4d6b;  /* texte secondaire, 7,4:1 sur papier */
+  --papier: #edf1f1;      /* le fond, froid comme le sol de la salle */
+  --papier-creuse: #e0e7e7; /* la deuxième teinte du papier : plaques, tableaux */
+  --papier-vif: #f7faf9;  /* les cartes qui se détachent du papier */
+  --encre: #11313a;       /* l'encre du site, la couleur du trait */
+  --encre-pale: #33555e;  /* texte secondaire */
   /* Le graphite porte TOUTES les étiquettes du site : cotes, clés de fiche,
      cartouches, légendes. Mesuré : 5,38:1 sur papier et 4,88:1 sur papier
      creusé — AA y compris en 12 px, parce qu'ici le petit texte EST le
      contenu, pas de la décoration. */
-  --graphite: #5f5f79;
-  --trait: rgba(30, 32, 68, 0.16);
-  --trait-faible: rgba(30, 32, 68, 0.08);
+  --graphite: #4e6870;
+  --trait: rgba(17, 49, 58, 0.16);
+  --trait-faible: rgba(17, 49, 58, 0.08);
 
-  /* Le cuivre. --signal-texte pour les mots, --signal pour les aplats. */
-  --signal: #b8763a;
-  --signal-texte: #7a3d16;
-  --signal-profond: #5e2f11;
-  --signal-voile: rgba(184, 118, 58, 0.12);
-  /* Le quadrillage du calque posé sur les photos. Il suit la polarité :
-     cuivre sur papier, cuivre pâle sur encre. */
-  --calque-trait: rgba(122, 61, 22, 0.28);
+  /* L'accent. --signal-texte pour les mots, --signal pour les aplats. */
+  --signal: #1f8a9c;
+  --signal-texte: #0f5c6a;
+  --signal-profond: #0a4049;
+  --signal-voile: rgba(31, 138, 156, 0.13);
+  /* Le quadrillage du calque posé sur les photos, dans la teinte du site. */
+  --calque-trait: rgba(15, 92, 106, 0.28);
+
+  /* La barre de navigation reste sombre quelle que soit la polarité de la
+     section : elle a donc ses propres jetons, pour suivre la couleur du
+     site sans dépendre du contexte où elle se trouve. */
+  --nav-accent: #6fc7d6;
+  --nav-gris: #8fa8b0;
+  --nav-faible: #b9cbd0;
+  --nav-fonce: #0b242b;
+  --nav-ombre: rgba(17, 49, 58, 0.85);
 
   /* Polarité par défaut : papier. Une section peut basculer en encre. */
   --fond: var(--papier);
@@ -150,20 +161,20 @@
 /* Polarité encre — appliquée par section, jamais par préférence système :
    le parcours de couleur est narratif, il n'appartient pas au visiteur. */
 .encre {
-  --calque-trait: rgba(216, 160, 106, 0.26);
+  --calque-trait: rgba(111, 199, 214, 0.24);
   --fond: var(--encre);
   --texte: var(--papier);
-  --texte-faible: #a9abc4;
-  --trait: rgba(243, 239, 230, 0.18);
-  --trait-faible: rgba(243, 239, 230, 0.09);
-  /* Sur encre, le graphite s'éclaircit symétriquement : 5,00:1, mesuré. */
-  --graphite: #8d90ae;
-  /* Sur encre, le cuivre doit s'éclaircir pour rester lisible : #d8a06a
-     donne 6,9:1 sur #1e2044, mesuré. */
-  --signal-texte: #d8a06a;
-  --signal: #c98a4c;
-  --papier-vif: #262a52;
-  --papier-creuse: #171930;
+  --texte-faible: #b9cbd0;
+  --trait: rgba(237, 241, 241, 0.18);
+  --trait-faible: rgba(237, 241, 241, 0.09);
+  /* Sur encre, le graphite s'éclaircit symétriquement : 5,5:1, mesuré. */
+  --graphite: #8fa8b0;
+  /* Sur encre, l'accent s'éclaircit pour rester lisible : #6fc7d6 donne
+     7,1:1 sur #11313a, mesuré. */
+  --signal-texte: #6fc7d6;
+  --signal: #3fa3b5;
+  --papier-vif: #17414c;
+  --papier-creuse: #0b242b;
 }
 
 /* Polarité papier creusé — pour poser une plaque sans changer de monde. */

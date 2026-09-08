@@ -51,7 +51,7 @@ export const LIBELLE_MODE: Record<Mode, string> = { bus: 'Bus', train: 'Train' }
 export const ARRIVEE = {
   arret: 'Route d’Espagne',
   rue: 'route d’Espagne',
-  phrase: 'La Linéo 5 s’arrête route d’Espagne. Le club est au 61.',
+  phrase: 'Tu descends à l’arrêt « Route d’Espagne ». Le club est au 61 de cette rue.',
 } as const;
 
 const L5 = {
@@ -66,22 +66,22 @@ const L5 = {
 
 /** Le titre de la page, ligne par ligne. La dernière porte l'accent. */
 export const TITRE = [
-  'La 85 t’emmène à Portet.',
-  'La L5 te dépose route d’Espagne.',
-  'Le club est au 61.',
+  'Y aller en bus,',
+  'c’est deux lignes :',
+  'la 85, puis la L5.',
 ] as const;
 
 /** Le chapeau : ce que fait le meilleur trajet, en une phrase. */
 export const CHAPEAU =
-  'Deux bus, une correspondance sur le parvis de la gare de Portet, et tu es devant la porte. La 85 roule du lundi au samedi — exactement les jours où Boxing Center Portet-sur-Garonne ouvre, de 10h à 21h30.';
+  'Tu prends la 85 à Cugnaux et tu descends à Portet Gare SNCF. Tu traverses le parvis, tu prends la L5, et tu descends à l’arrêt « Route d’Espagne ». Le club est au 61 de cette rue. La 85 roule du lundi au samedi, la L5 tous les jours.';
 
 export const ITINERAIRES: readonly Itineraire[] = [
   {
     id: 'quatre-vingt-cinq',
     onglet: 'La 85, puis la L5',
-    titre: 'La 85 t’emmène à Portet, la L5 te dépose route d’Espagne.',
+    titre: 'La 85, puis la L5.',
     resume:
-      'La 85 traverse Cugnaux et finit son parcours à Portet Gare SNCF. Sur le parvis, la Linéo 5 repart et dessert l’arrêt « Route d’Espagne » — le club est au 61 de cette rue. La 85 roule du lundi au samedi, exactement les jours où le club ouvre.',
+      'La 85 traverse Cugnaux et s’arrête à Portet Gare SNCF. La L5 part du même endroit, sur le parvis, et te dépose à l’arrêt « Route d’Espagne ». Le club est au 61. La 85 roule du lundi au samedi, comme le club ; la L5 tous les jours, jusqu’à minuit passé.',
     mode: 'bus',
     meilleur: true,
     etapes: [
@@ -100,9 +100,9 @@ export const ITINERAIRES: readonly Itineraire[] = [
   {
     id: 'trois-cent-vingt-et-un',
     onglet: 'La 321, puis la L5',
-    titre: 'La transversale du secteur, sans passer par Toulouse.',
+    titre: 'La 321, puis la L5.',
     resume:
-      'La 321 part de Frouzins, dessert Cugnaux à l’arrêt « Mairie Cugnaux » et rejoint Portet Gare SNCF en dix-neuf arrêts. La Linéo 5 prend le relais jusqu’à la route d’Espagne. C’est le trajet le plus court en distance, du lundi au vendredi.',
+      'La 321 s’arrête à « Mairie Cugnaux » et finit à Portet Gare SNCF. Tu y reprends la L5 jusqu’à la route d’Espagne. Elle roule du lundi au vendredi : le samedi, prends la 85.',
     mode: 'bus',
     etapes: [
       {
@@ -136,21 +136,21 @@ export const DEPARTS: readonly Depart[] = [
     depuis: 'Cugnaux',
     itineraire: 'quatre-vingt-cinq',
     texte:
-      'Monte dans la 85, descends à Portet Gare SNCF, traverse le parvis et prends la L5. Deux bus, du lundi au samedi.',
+      'Tu montes dans la 85, tu descends à Portet Gare SNCF, tu prends la L5 sur le parvis. Elle t’arrête route d’Espagne.',
   },
   {
     depuis: 'Villeneuve-Tolosane',
     itineraire: 'quatre-vingt-cinq',
     texte:
-      'La 85 marque l’arrêt « Mairie Villeneuve Tolosane » avant de filer sur Portet. Même correspondance, même arrivée route d’Espagne.',
+      'La 85 passe par « Mairie Villeneuve Tolosane » avant Portet. Tu changes à la gare et tu finis en L5.',
   },
   {
     depuis: 'Frouzins',
     itineraire: 'trois-cent-vingt-et-un',
     texte:
-      'La 321 part de Frouzins Tréville et finit à Portet Gare SNCF. La L5 prend le relais jusqu’au club.',
+      'La 321 part de Frouzins Tréville et finit à Portet Gare SNCF. Tu y prends la L5 jusqu’au club.',
   },
 ];
 
 export const AVERTISSEMENT =
-  'Tisséo publie les horaires, les fréquences et les arrêts, et les met à jour à chaque saison. Cette page te dit quels bus prendre ; Tisséo te dit à quelle heure ils passent.';
+  'Les horaires changent d’une saison à l’autre. On te dit quels bus prendre ; pour l’heure exacte, ouvre la fiche Tisséo de la ligne — le lien est juste à côté de chaque étape.';

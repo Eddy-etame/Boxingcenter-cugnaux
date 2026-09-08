@@ -118,10 +118,11 @@ const LEGENDE = motifs(c.nom).map((m) => ({ motif: m, reponse: REPONSES[m] }));
     <div class="enveloppe">
       <p class="cartouche"><span class="cartouche__num">02</span><span>Depuis {c.nom}</span></p>
       <div class="depuis__tete">
-        <h2 id="t-depuis">La route, les lignes, et les communes voisines.</h2>
+        <h2 id="t-depuis">Comment tu y vas.</h2>
         <p class="lead faible">
-          {c.population}, {c.intercommunalite}, INSEE {c.insee}. La géographie
-          compte, quand il s’agit d’y aller deux fois par semaine.
+          {c.population}, {c.intercommunalite}. Voilà la route, les bus, et les
+          communes autour — de quoi savoir en trente secondes si c’est jouable
+          deux fois par semaine.
         </p>
       </div>
 
@@ -169,13 +170,12 @@ const LEGENDE = motifs(c.nom).map((m) => ({ motif: m, reponse: REPONSES[m] }));
         </article>
       </div>
 
-      {/* Le fait local : il situe, il ne décore pas. */}
-      <figure class="local">
-        <blockquote>
-          <p>{c.faitLocal}</p>
-        </blockquote>
-        <figcaption>{c.faitLocalEcho}</figcaption>
-      </figure>
+      {/* L'info pratique qui décide, mise en évidence. */}
+      <div class="local">
+        <p class="mono local__cle">Bon à savoir</p>
+        <p class="local__fait">{c.faitLocal}</p>
+        <p class="local__suite">{c.faitLocalEcho}</p>
+      </div>
     </div>
   </section>
 
@@ -184,11 +184,10 @@ const LEGENDE = motifs(c.nom).map((m) => ({ motif: m, reponse: REPONSES[m] }));
     <div class="enveloppe">
       <p class="cartouche"><span class="cartouche__num">03</span><span>Légende</span></p>
       <div class="legende__tete">
-        <h2 id="t-legende">Ce que tu as tapé, et ce que ça veut dire ici.</h2>
+        <h2 id="t-legende">Les questions qu’on nous pose le plus.</h2>
         <p class="lead faible">
-          Un plan porte une légende. Voici la nôtre&nbsp;: à gauche, les
-          recherches telles qu’elles s’écrivent&nbsp;; à droite, le fait qui y
-          répond. Aucune promesse, aucune approximation.
+          À gauche, ce que les gens cherchent. À droite, la réponse en une
+          phrase.
         </p>
       </div>
       <dl class="legende__liste">
@@ -207,10 +206,10 @@ const LEGENDE = motifs(c.nom).map((m) => ({ motif: m, reponse: REPONSES[m] }));
     <div class="enveloppe">
       <p class="cartouche"><span class="cartouche__num">04</span><span>Au club</span></p>
       <div class="auclub__tete">
-        <h2 id="t-auclub">Les neuf intitulés, tels que le club les publie.</h2>
+        <h2 id="t-auclub">Les neuf cours du club.</h2>
         <p class="lead faible">
-          {DESTINATION.singularite} Depuis {c.nom}, c’est cette liste-là qui
-          t’attend — pas une autre, pas une version allégée.
+          Voilà tout ce qui se pratique, avec les noms exacts que tu verras sur
+          le planning. {DESTINATION.singularite}
         </p>
       </div>
       <ul class="auclub__liste">
@@ -267,7 +266,7 @@ const LEGENDE = motifs(c.nom).map((m) => ({ motif: m, reponse: REPONSES[m] }));
   <section class="section voisines" aria-labelledby="t-voisines">
     <div class="enveloppe">
       <p class="cartouche"><span class="cartouche__num">06</span><span>Le secteur</span></p>
-      <h2 id="t-voisines">Tu viens d’ailleurs&nbsp;? La route change, pas le club.</h2>
+      <h2 id="t-voisines">Tu pars d’une autre commune&nbsp;?</h2>
       <ul class="voisines__liste">
         <li class="reveler">
           <a class="carte" href="/">
@@ -299,12 +298,12 @@ const LEGENDE = motifs(c.nom).map((m) => ({ motif: m, reponse: REPONSES[m] }));
       <p class="cartouche"><span class="cartouche__num">07</span><span>Décider</span></p>
       <h2 id="t-conv">
         Tu sais où c’est.<br />
-        <span class="convergence__accent">Reste à choisir ta séance.</span>
+        <span class="convergence__accent">Reste à choisir ton cours.</span>
       </h2>
       <p class="lead convergence__texte">
-        Deux réponses et tu sais quelle discipline viser et à quel moment de la
-        semaine. Si tu préfères demander, écris-nous en deux lignes&nbsp;: on
-        répond avec un créneau.
+        Réponds à deux questions et on te dit quoi viser et quand venir. Si tu
+        préfères demander, écris-nous en deux lignes&nbsp;: on te répond avec un
+        créneau.
       </p>
       <div class="convergence__actions">
         <a class="bouton bouton--signal" href={route('contact').chemin}>
@@ -438,14 +437,9 @@ const LEGENDE = motifs(c.nom).map((m) => ({ motif: m, reponse: REPONSES[m] }));
     background: var(--papier-vif);
     max-width: 72ch;
   }
-  .local blockquote p { font-size: var(--t-lead); line-height: 1.5; }
-  .local figcaption {
-    margin-top: var(--e-4);
-    font-family: var(--police-mono);
-    font-size: var(--t-micro);
-    letter-spacing: 0.08em;
-    color: var(--signal-texte);
-  }
+  .local__cle { color: var(--signal-texte); margin-bottom: var(--e-3); }
+  .local__fait { font-size: var(--t-lead); line-height: 1.5; }
+  .local__suite { margin-top: var(--e-3); font-size: var(--t-petit); color: var(--texte-faible); }
 
   /* ── 03 Légende ────────────────────────────────────────────────────── */
   .legende__tete {

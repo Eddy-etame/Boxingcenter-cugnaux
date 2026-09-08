@@ -108,7 +108,7 @@ export const CLUBS: readonly Club[] = [
     ouvertureTexte: '10h',
     fermetureTexte: '21h30',
     acces:
-      "Par la route de Toulouse puis la D63, ou par la rocade : Cugnaux et Portet-sur-Garonne se touchent, et le club est au 61 route d'Espagne.",
+      "En voiture, tu descends par la route de Toulouse et la D63, ou tu prends la rocade. En bus, la 85 puis la L5. Le club est au 61 route d'Espagne.",
     singularite: 'Le seul club du réseau avec une cage MMA.',
     faits: [
       { cle: 'Voisinage', valeur: 'communes limitrophes', source: 'Wikipédia' },
@@ -155,7 +155,7 @@ export const VILLE = {
  * Vide si aucun lien géographique réel n'existe — on n'en invente pas.
  */
 export const NOTE_SECTEUR =
-  'Cugnaux touche Portet-sur-Garonne : la limite communale passe entre les deux, et le club est juste de l’autre côté.';
+  'Cugnaux et Portet-sur-Garonne se touchent : depuis chez toi, il n’y a rien à traverser pour arriver au club.';
 
 /** Les cinq communes limitrophes. Portet en fait partie : c'est tout le site. */
 export const LIMITROPHES: readonly { nom: string; note?: string }[] = [
