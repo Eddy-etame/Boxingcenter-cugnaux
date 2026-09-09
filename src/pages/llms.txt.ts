@@ -61,7 +61,7 @@ porte qui n'existe pas.
 - Depuis Muret : ${DESTINATION.acces} — 23 km par la route.
 - Ce qui le distingue : 600 m², un ring et une cage MMA. ${DESTINATION.singularite}
 
-## Les neuf disciplines réellement publiées par le club
+## Les disciplines réellement publiées par le club
 
 Relevé le 8 septembre 2026 sur ${SOURCE_OFFRES}.
 
