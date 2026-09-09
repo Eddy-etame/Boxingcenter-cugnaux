@@ -1,36 +1,35 @@
 ---
 /**
- * LE HERO — « La limite ».
+ * LE HERO — un écran, et la porte du club dedans.
  *
- * Cugnaux et Portet-sur-Garonne se touchent. C'est le seul fait dont ce site a
- * réellement besoin, et c'est donc lui qui devient le dessin : une planche de
- * géomètre où l'on voit la limite communale — tracée au trait mixte et à la
- * hachure, comme sur un plan cadastral — et la route qui la franchit une fois,
- * une seule.
+ * Ce qu'il fait, dans l'ordre où un Cugnalais se pose les questions :
+ * confirmer qu'il est au bon endroit (le H1), lui donner la raison de rester
+ * (les disciplines), nommer le club et sa commune — voisine —, et ouvrir la
+ * porte du club avant le premier défilement.
  *
- * Les deux cotes du bas ne mesurent pas une distance : elles mesurent les DEUX
- * COMMUNES, bout à bout, avec le même tiret au milieu. C'est la démonstration
- * du site en une figure : deux territoires, une frontière partagée, le club
- * juste derrière.
+ * Le plan de la limite vit une section plus bas, sous le titre qu'il illustre :
+ * ici, il coûtait presque un écran avant le premier mot sur le club. Le second
+ * bouton y mène par une ancre.
  *
- * Muret avait l'aile de l'Éole ; ici, il n'y a pas d'aile — le nœud d'origine
- * porte le blason typographique de la ville, nom et code postal en mono, comme
- * le veut la loi commune pour tous les sites qui ne sont pas Muret.
- *
- * Le trait de route partage `--tension` avec la barre de parcours : quand le
- * visiteur décide, la ligne se tend. Tout est en SVG inline — aucun canvas,
- * aucune bibliothèque, aucune requête. Sans JavaScript et en mouvement réduit,
- * le plan est déjà à son état final. Deux tracés existent, horizontal et
- * vertical : un plan s'adapte au format de sa feuille.
+ * Le H1 est fixé par le cahier des charges : « accessibles depuis ».
  */
 import { SITE, DESTINATION } from '../data/verite';
-import { route } from '../data/routes';
+import { offresDeLaPage } from '../data/offres';
 
-const cotes = DESTINATION.faits;
-const surface = cotes[1].valeur;
-const equipement = cotes[2].valeur;
-const accueil = cotes[3].valeur;
-const disciplines = cotes[4].valeur;
+/** Les disciplines telles que le club les publie, dans l'ordre des pages. */
+const DISCIPLINES = [
+  ...offresDeLaPage('boxe-anglaise'),
+  ...offresDeLaPage('kick-boxing'),
+  ...offresDeLaPage('mma'),
+  ...offresDeLaPage('boxe-enfants').slice(0, 1),
+]
+  // Les intitulés du club, en minuscules dans la phrase — sauf le sigle.
+  .map((o) => (o.intitule === 'MMA' ? o.intitule : o.intitule.toLowerCase()))
+  .join(', ')
+  .replace(/, ([^,]+)$/, ' et $1');
+
+/** Les cotes du club, projetées telles quelles depuis le registre. */
+const COTES = DESTINATION.faits.filter((f) => ['Surface', 'Équipement', 'Accueil'].includes(f.cle));
 ---
 
 <section class="hero" aria-labelledby="t-hero">
@@ -41,267 +40,51 @@ const disciplines = cotes[4].valeur;
       <span>à proximité de {SITE.ville}</span>
     </p>
 
-    <div class="hero__haut">
-      <div class="hero__texte">
-        <h1 id="t-hero" class="hero__titre">
-          <span class="hero__ligne">Des cours de boxe</span>
-          <span class="hero__ligne hero__ligne--accent">accessibles depuis {SITE.ville}.</span>
-        </h1>
+    <div class="hero__texte">
+      <h1 id="t-hero" class="hero__titre">
+        <span class="hero__ligne">Des cours de boxe</span>
+        <span class="hero__ligne hero__ligne--accent">accessibles depuis {SITE.ville}.</span>
+      </h1>
 
-        <p class="hero__promesse">
-          <strong>Boxe anglaise, MMA, kick-boxing, grappling et cours enfants</strong>,
-          à deux pas de chez toi. 600 m², un ring, une cage. Ouvert
-          {DESTINATION.horaires.valeur}. Tu peux venir sans avoir jamais boxé.
-        </p>
+      <p class="hero__promesse">
+        <strong>{DISCIPLINES.charAt(0).toUpperCase() + DISCIPLINES.slice(1)}, à {DESTINATION.nom}.</strong>
+        {DESTINATION.ville} est la commune voisine&nbsp;: {SITE.ville} la touche,
+        et le club est de l’autre côté de la limite.
+      </p>
 
-        <div class="hero__actions">
-          <a class="bouton bouton--signal" href={DESTINATION.tarifs} rel="noopener">
-            <span>Réserver ma séance d’essai</span>
-            <span class="fleche" aria-hidden="true">↗</span>
-          </a>
-          <a class="bouton" href={route('ta-seance').chemin}>
-            <span>Trouver ma séance</span>
-            <span class="fleche" aria-hidden="true">→</span>
-          </a>
-          <a class="bouton" href={DESTINATION.site} rel="noopener">
-            <span>Le site du club</span>
-            <span class="fleche" aria-hidden="true">↗</span>
-          </a>
-        </div>
+      <p class="hero__cotes mono">
+        <span>{DESTINATION.adresse.split(',')[0]}</span>
+        {COTES.map((f) => (
+          <>
+            <span aria-hidden="true">·</span>
+            <span>{f.valeur}</span>
+          </>
+        ))}
+      </p>
+
+      <div class="hero__actions">
+        <a class="bouton bouton--signal" href={DESTINATION.tarifs} rel="noopener">
+          <span>Réserver ma séance d’essai</span>
+          <span class="fleche" aria-hidden="true">↗</span>
+        </a>
+        <a class="bouton" href="#limite">
+          <span>La limite, et le club derrière</span>
+          <span class="fleche" aria-hidden="true">↓</span>
+        </a>
       </div>
-
-      <dl class="hero__faits">
-        <div>
-          <dt class="mono">Le club</dt>
-          <dd>{DESTINATION.nomCourt}, la commune voisine</dd>
-        </div>
-        <div>
-          <dt class="mono">Accueil</dt>
-          <dd>{DESTINATION.horairesCourt}</dd>
-        </div>
-        <div>
-          <dt class="mono">Depuis {SITE.ville}</dt>
-          <dd>
-            <a class="hero__fait-lien" href={route('transports').chemin}>
-              {SITE.accesCourt}<span class="fleche" aria-hidden="true">→</span>
-            </a>
-          </dd>
-        </div>
-        <div>
-          <dt class="mono">Niveau</dt>
-          <dd>Débutant à compétiteur</dd>
-        </div>
-      </dl>
     </div>
-  </div>
-
-  {/* ─────────────── LE PLAN ─────────────── */}
-  <div class="enveloppe">
-    <figure class="plan" data-plan>
-      <figcaption class="vh">
-        Plan de limite : Cugnaux (31270) et Portet-sur-Garonne (31120) sont deux
-        communes limitrophes. La route franchit une seule limite communale pour
-        rejoindre Boxing Center Portet-sur-Garonne, 600 m², un ring et une cage
-        MMA, ouvert de {DESTINATION.ouvertureTexte} à {DESTINATION.fermetureTexte} six jours sur sept, toutes ses disciplines publiées.
-      </figcaption>
-
-      {/* ── Tracé horizontal — écrans larges ── */}
-      <svg
-        class="plan__svg plan__svg--h"
-        viewBox="0 0 1200 440"
-        role="img"
-        aria-hidden="true"
-        preserveAspectRatio="xMidYMid meet"
-      >
-        {/* La limite communale : trait mixte et hachures, comme au cadastre.
-            Elle se trace en premier — c'est le fait fondateur du site. */}
-        <g class="plan__limite">
-          <path
-            class="plan__limite-trait"
-            d="M 664 8 L 636 96 L 652 170 L 626 262 L 644 344 L 612 432"
-            fill="none"
-          />
-          <path
-            class="plan__limite-hachure"
-            d="M 650 52 l 22 7 M 642 132 l 22 5 M 640 214 l 22 6 M 636 302 l 22 6 M 628 388 l 22 7"
-            fill="none"
-          />
-        </g>
-
-        {/* La route : un seul coude, et un seul franchissement. */}
-        <path class="plan__trait" d="M 200 262 H 700 L 1010 186" fill="none" />
-        <path
-          class="plan__trait plan__trait--tendu"
-          d="M 200 262 H 700 L 1010 186"
-          fill="none"
-          pathLength="100"
-        />
-
-        {/* Les deux cotes du bas mesurent les communes, pas des kilomètres. */}
-        <g class="plan__cote" style="--rang:1">
-          <path class="plan__cote-ligne" d="M 200 372 H 626" />
-          <path class="plan__cote-tick" d="M 200 364 V 380 M 626 360 V 384" />
-          <text class="plan__cote-texte" x="413" y="358" text-anchor="middle">Cugnaux · 31270</text>
-        </g>
-        <g class="plan__cote" style="--rang:2">
-          <path class="plan__cote-ligne" d="M 626 372 H 1010" />
-          <path class="plan__cote-tick" d="M 1010 364 V 380" />
-          <text class="plan__cote-texte" x="818" y="358" text-anchor="middle">
-            Portet-sur-Garonne · 31120
-          </text>
-          <text class="plan__cote-source" x="626" y="404" text-anchor="middle">
-            Limite communale
-          </text>
-        </g>
-
-        {/* Cote — l'amplitude d'accueil, près de l'origine */}
-        <g class="plan__cote" style="--rang:3">
-          <path class="plan__cote-ligne" d="M 392 262 V 206" />
-          <path class="plan__cote-tick" d="M 384 206 H 400" />
-          <text class="plan__cote-texte" x="392" y="190" text-anchor="middle">{accueil}</text>
-        </g>
-
-        {/* Cote — l'équipement, sur la montée vers le club */}
-        <g class="plan__cote" style="--rang:4">
-          <path class="plan__cote-ligne" d="M 790 240 V 174" />
-          <path class="plan__cote-tick" d="M 782 174 H 798" />
-          <text class="plan__cote-texte" x="790" y="158" text-anchor="middle">{equipement}</text>
-        </g>
-
-        {/* Cote — la surface, au-dessus de la destination */}
-        <g class="plan__cote" style="--rang:5">
-          <path class="plan__cote-ligne" d="M 1010 186 V 112" />
-          <path class="plan__cote-tick" d="M 1002 112 H 1018" />
-          <text class="plan__cote-texte" x="1010" y="96" text-anchor="middle">{surface}</text>
-        </g>
-
-        {/* Le franchissement : la borne du géomètre, posée sur la limite. */}
-        <g class="plan__borne">
-          <rect class="plan__borne-carre" x="616" y="252" width="20" height="20" />
-          <path class="plan__borne-croix" d="M 626 244 V 280 M 608 262 H 644" />
-        </g>
-
-        {/* Nœud d'origine — le blason typographique de la ville. */}
-        <g class="plan__noeud plan__noeud--origine">
-          <circle cx="200" cy="262" r="7" />
-          <text class="plan__noeud-nom" x="200" y="294" text-anchor="middle">CUGNAUX</text>
-          <text class="plan__noeud-cp" x="200" y="312" text-anchor="middle">31270 · Cugnalais</text>
-        </g>
-
-        {/* Nœud de destination — le club. Cible, pas point. */}
-        <g class="plan__noeud plan__noeud--fin">
-          <circle class="plan__cible" cx="1010" cy="186" r="15" />
-          <circle cx="1010" cy="186" r="6" />
-          <text class="plan__noeud-nom" x="1010" y="228" text-anchor="middle">PORTET-SUR-GARONNE</text>
-          <text class="plan__noeud-cp" x="1010" y="246" text-anchor="middle">31120 · {disciplines}</text>
-        </g>
-      </svg>
-
-      {/* ── Tracé vertical — téléphones. Même plan, autre feuille. ── */}
-      <svg
-        class="plan__svg plan__svg--v"
-        viewBox="0 0 360 620"
-        role="img"
-        aria-hidden="true"
-        preserveAspectRatio="xMidYMid meet"
-      >
-        <g class="plan__limite">
-          <path
-            class="plan__limite-trait"
-            d="M 4 328 L 56 312 L 96 300 L 152 286 L 232 300 L 356 284"
-            fill="none"
-          />
-          <path
-            class="plan__limite-hachure"
-            d="M 30 320 l -6 20 M 76 306 l -5 20 M 124 293 l -4 20 M 192 292 l -3 20 M 294 292 l -4 20"
-            fill="none"
-          />
-        </g>
-
-        <path class="plan__trait" d="M 96 150 V 430 L 264 520" fill="none" />
-        <path
-          class="plan__trait plan__trait--tendu"
-          d="M 96 150 V 430 L 264 520"
-          fill="none"
-          pathLength="100"
-        />
-
-        {/* Les deux communes, cotées le long de la marge gauche. */}
-        <g class="plan__cote" style="--rang:1">
-          <path class="plan__cote-ligne" d="M 34 150 V 300" />
-          <path class="plan__cote-tick" d="M 26 150 H 42 M 22 300 H 46" />
-          <text class="plan__cote-texte" transform="rotate(-90 24 225)" x="24" y="225" text-anchor="middle">
-            Cugnaux · 31270
-          </text>
-        </g>
-        <g class="plan__cote" style="--rang:2">
-          <path class="plan__cote-ligne" d="M 34 300 V 520" />
-          <path class="plan__cote-tick" d="M 26 520 H 42" />
-          <text class="plan__cote-texte" transform="rotate(-90 24 410)" x="24" y="410" text-anchor="middle">
-            Portet-sur-Garonne
-          </text>
-        </g>
-
-        <g class="plan__cote" style="--rang:3">
-          <path class="plan__cote-ligne" d="M 96 216 H 176" />
-          <path class="plan__cote-tick" d="M 176 208 V 224" />
-          <text class="plan__cote-texte" x="186" y="221" text-anchor="start">{accueil}</text>
-        </g>
-
-        <g class="plan__cote" style="--rang:4">
-          <path class="plan__cote-ligne" d="M 96 384 H 176" />
-          <path class="plan__cote-tick" d="M 176 376 V 392" />
-          <text class="plan__cote-texte" x="186" y="389" text-anchor="start">{equipement}</text>
-        </g>
-
-        <g class="plan__cote" style="--rang:5">
-          <path class="plan__cote-ligne" d="M 264 520 H 322" />
-          <path class="plan__cote-tick" d="M 322 512 V 528" />
-          <text class="plan__cote-texte" x="318" y="502" text-anchor="end">{surface}</text>
-        </g>
-
-        <g class="plan__borne">
-          <rect class="plan__borne-carre" x="86" y="290" width="20" height="20" />
-          <path class="plan__borne-croix" d="M 96 282 V 318 M 78 300 H 114" />
-          <text class="plan__cote-source" x="122" y="270" text-anchor="start">
-            Limite communale
-          </text>
-        </g>
-
-        <g class="plan__noeud plan__noeud--origine">
-          <circle cx="96" cy="150" r="7" />
-          <text class="plan__noeud-nom" x="112" y="146" text-anchor="start">CUGNAUX</text>
-          <text class="plan__noeud-cp" x="112" y="164" text-anchor="start">31270</text>
-        </g>
-
-        <g class="plan__noeud plan__noeud--fin">
-          <circle class="plan__cible" cx="264" cy="520" r="14" />
-          <circle cx="264" cy="520" r="6" />
-          <text class="plan__noeud-nom" x="248" y="558" text-anchor="end">PORTET-SUR-GARONNE</text>
-          <text class="plan__noeud-cp" x="248" y="576" text-anchor="end">31120</text>
-        </g>
-      </svg>
-
-      {/* Le cartouche d'une vraie planche : ce qui rend le dessin vérifiable. */}
-      <div class="plan__bloc mono">
-        <span><b>Cugnaux</b> → Portet-sur-Garonne</span>
-        <span>Boxing Center</span>
-        <span class="plan__bloc-src">61 route d’Espagne, {DESTINATION.codePostal} {DESTINATION.ville}</span>
-      </div>
-    </figure>
   </div>
 </section>
 
 <style>
   .hero {
     position: relative;
-    padding-block: clamp(2rem, 1rem + 4vw, 4.5rem) clamp(3rem, 2rem + 4vw, 5rem);
+    padding-block: clamp(2rem, 1rem + 4vw, 4.5rem) clamp(2.5rem, 1.5rem + 4vw, 5rem);
     background: var(--papier);
     overflow: hidden;
   }
 
-  /* Le papier a un grain de calque : des lignes de trame très pâles, comme
-     une feuille millimétrée qu'on aurait presque effacée. */
+  /* Le papier a un grain de calque : des lignes de trame très pâles. */
   .hero::before {
     content: '';
     position: absolute;
@@ -311,13 +94,14 @@ const disciplines = cotes[4].valeur;
       linear-gradient(to right, var(--trait-faible) 1px, transparent 1px),
       linear-gradient(to bottom, var(--trait-faible) 1px, transparent 1px);
     background-size: 3.5rem 3.5rem;
-    mask-image: radial-gradient(120% 90% at 55% 45%, #000 0%, transparent 78%);
+    mask-image: radial-gradient(120% 90% at 70% 40%, #000 0%, transparent 78%);
     opacity: 0.55;
   }
   .hero > * { position: relative; }
 
   .hero__cartouche {
     display: flex;
+    flex-wrap: wrap;
     gap: var(--e-3);
     align-items: center;
     padding-bottom: var(--e-4);
@@ -326,301 +110,65 @@ const disciplines = cotes[4].valeur;
   }
   .hero__planche { color: var(--signal-texte); font-weight: 700; }
 
-  .hero__haut {
-    display: grid;
-    grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
-    gap: var(--e-6) var(--e-8);
-    align-items: end;
-  }
-  @media (max-width: 62rem) {
-    .hero__haut { grid-template-columns: 1fr; align-items: start; }
-  }
+  .hero__texte { max-width: 60rem; }
 
   .hero__titre { max-width: 15ch; margin-bottom: var(--e-5); }
-  .hero__ligne { display: block; }
-  /* La dernière ligne est cuivre : c'est l'affirmation que le plan prouve
-     juste en dessous, et la seule chose que ce site a besoin de dire. */
-  .hero__ligne--accent { color: var(--signal-texte); }
-
+  /* La signature du site : les lignes arrivent de la gauche, avec du retard
+     entre elles — le même geste que les blocs au scroll. */
   .hero__ligne {
-    animation: poser 720ms var(--e-sortie) both;
+    display: block;
+    animation: poser 760ms var(--e-sortie) both;
     animation-delay: calc(var(--i, 0) * 130ms);
   }
   .hero__ligne:nth-child(1) { --i: 0; }
   .hero__ligne:nth-child(2) { --i: 1; }
-  .hero__ligne:nth-child(3) { --i: 2; }
-  .hero__ligne { animation-duration: 900ms; }
+  .hero__ligne--accent { color: var(--signal-texte); }
   @keyframes poser {
     from { opacity: 0; transform: translateX(-0.55em); }
     to { opacity: 1; transform: none; }
   }
 
   .hero__promesse {
-    max-width: 52ch;
+    max-width: 54ch;
     font-size: var(--t-lead);
     line-height: 1.45;
     color: var(--texte-faible);
     padding-left: var(--e-5);
     border-left: 2px solid var(--signal);
+    animation: poser 760ms var(--e-sortie) 300ms both;
   }
   .hero__promesse strong { color: var(--encre); font-weight: 600; }
+
+  .hero__cotes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--e-2) var(--e-3);
+    margin-top: var(--e-5);
+    padding-left: calc(var(--e-5) + 2px);
+    color: var(--graphite);
+    text-transform: none;
+    letter-spacing: 0.05em;
+    animation: poser 760ms var(--e-sortie) 430ms both;
+  }
+  .hero__cotes span:first-child { color: var(--encre); font-weight: 700; }
 
   .hero__actions {
     display: flex;
     flex-wrap: wrap;
     gap: var(--e-3);
     margin-top: var(--e-6);
+    animation: poser 760ms var(--e-sortie) 560ms both;
   }
 
-  .hero__faits { display: grid; gap: 0; margin: 0; }
-  .hero__faits > div {
-    display: grid;
-    gap: 0.15rem;
-    padding: var(--e-3) 0;
-    border-top: 1px solid var(--trait);
-  }
-  .hero__faits > div:last-child { border-bottom: 1px solid var(--trait); }
-  .hero__faits dt { color: var(--graphite); }
-  .hero__faits dd { margin: 0; font-size: var(--t-petit); font-weight: 600; }
-  /* Le seul fait cliquable du hero : celui qui lève l'objection « c'est loin ». */
-  .hero__fait-lien {
-    display: inline-flex;
-    align-items: baseline;
-    gap: 0.4em;
-    color: var(--signal-texte);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color var(--d-rapide) var(--e-mecanique);
-  }
-  .hero__fait-lien:hover { border-color: currentColor; }
-
-  /* ── Le plan ───────────────────────────────────────────────────────── */
-  .plan { position: relative; margin: var(--e-8) 0 0; }
-
-  .plan__svg { width: 100%; height: auto; overflow: visible; }
-  .plan__svg--v { display: none; }
-  @media (max-width: 48rem) {
-    .plan__svg--h { display: none; }
-    .plan__svg--v { display: block; max-width: 22rem; margin-inline: auto; }
-  }
-
-  /* La limite : elle se trace avant tout le reste, puis recule. */
-  .plan__limite-trait,
-  .plan__limite-hachure {
-    stroke: var(--signal);
-    fill: none;
-    vector-effect: non-scaling-stroke;
-    stroke-linecap: round;
-  }
-  .plan__limite-trait {
-    stroke-width: 1.6;
-    /* Le trait mixte du cadastre : long, court, long. */
-    stroke-dasharray: 26 6 5 6;
-  }
-  .plan__limite-hachure { stroke-width: 2.4; }
-
-  .plan__limite {
-    opacity: 0;
-    animation:
-      apparaitre 700ms var(--e-resolution) 180ms forwards,
-      reculer 500ms var(--e-sortie) 1000ms forwards;
-  }
-  @keyframes apparaitre { to { opacity: 1; } }
-  @keyframes reculer { from { opacity: 1; } to { opacity: 0.46; } }
-
-  /* La limite se dessine du haut vers le bas avant d'apparaître en entier. */
-  .plan__limite-trait {
-    stroke-dashoffset: 0;
-    animation: filer 900ms var(--e-resolution) 180ms both;
-  }
-  @keyframes filer {
-    from { stroke-dashoffset: 520; }
-    to { stroke-dashoffset: 0; }
-  }
-
-  /* La route : le trait latent, toujours là. */
-  .plan__trait {
-    stroke: var(--graphite);
-    stroke-width: 1;
-    vector-effect: non-scaling-stroke;
-    opacity: 0.45;
-  }
-
-  /* Le trait tendu : il se trace au chargement, puis suit --tension, la même
-     variable que la barre de parcours. Décider tend la ligne. */
-  .plan__trait--tendu {
-    stroke: var(--signal-texte);
-    stroke-width: 2;
-    opacity: 1;
-    stroke-dasharray: 100;
-    stroke-dashoffset: calc(100 - 100 * var(--trace, 0));
-    animation: tendre var(--d-trace) var(--e-resolution) 900ms forwards;
-    transition: stroke-dashoffset var(--d-trace) var(--e-resolution);
-  }
-  @keyframes tendre { to { --trace: 1; } }
-  @property --trace {
-    syntax: '<number>';
-    inherits: false;
-    initial-value: 0;
-  }
-
-  /* Les cotes arrivent l'une après l'autre, après la route. */
-  .plan__cote {
-    opacity: 0;
-    animation: apparaitre 420ms var(--e-sortie) forwards;
-    animation-delay: calc(1500ms + var(--rang) * 130ms);
-  }
-
-  .plan__cote-ligne,
-  .plan__cote-tick {
-    stroke: var(--graphite);
-    stroke-width: 1;
-    vector-effect: non-scaling-stroke;
-    fill: none;
-    opacity: 0.7;
-  }
-  .plan__cote-ligne { stroke-dasharray: 4 4; }
-
-  .plan__cote-texte {
-    font-family: var(--police-mono);
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    fill: var(--signal-texte);
-  }
-  .plan__cote-source {
-    font-family: var(--police-mono);
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    fill: var(--graphite);
-    text-transform: uppercase;
-  }
-
-  /* La borne du géomètre : posée sur la limite, au point de franchissement.
-     Elle arrive au moment exact où le trait de route la traverse. */
-  .plan__borne {
-    opacity: 0;
-    transform-box: fill-box;
-    transform-origin: center;
-    animation: poser-borne 520ms var(--e-mecanique) 1320ms forwards;
-  }
-  @keyframes poser-borne {
-    from { opacity: 0; transform: scale(2.2) rotate(45deg); }
-    to { opacity: 1; transform: scale(1) rotate(45deg); }
-  }
-  .plan__borne-carre {
-    fill: var(--papier);
-    stroke: var(--encre);
-    stroke-width: 1.4;
-    vector-effect: non-scaling-stroke;
-    transform-box: fill-box;
-    transform-origin: center;
-    transform: rotate(45deg);
-  }
-  .plan__borne-croix {
-    stroke: var(--encre);
-    stroke-width: 1;
-    vector-effect: non-scaling-stroke;
-    fill: none;
-    opacity: 0.75;
-  }
-
-  /* Les nœuds : le départ est un point, l'arrivée est une cible. */
-  .plan__noeud circle { fill: var(--encre); }
-  .plan__noeud {
-    opacity: 0;
-    animation: apparaitre 380ms var(--e-sortie) forwards;
-  }
-  .plan__noeud--origine { animation-delay: 980ms; }
-  .plan__noeud--fin { animation-delay: 1700ms; }
-
-  .plan__cible {
-    fill: none;
-    stroke: var(--signal-texte);
-    stroke-width: 1.5;
-    vector-effect: non-scaling-stroke;
-    transform-box: fill-box;
-    transform-origin: center;
-    animation: viser 2.6s var(--e-mecanique) 2s infinite;
-  }
-  @keyframes viser {
-    0%, 72%, 100% { transform: scale(1); opacity: 1; }
-    84% { transform: scale(1.28); opacity: 0.35; }
-  }
-  .plan__noeud--fin circle:last-of-type { fill: var(--signal-texte); }
-
-  .plan__noeud-nom {
-    font-family: var(--police-mono);
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    fill: var(--encre);
-  }
-  .plan__noeud-cp {
-    font-family: var(--police-mono);
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    fill: var(--graphite);
-  }
-
-  /* Le cartouche de la planche. */
-  .plan__bloc {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--e-2) var(--e-5);
-    margin-top: var(--e-5);
-    padding-top: var(--e-3);
-    border-top: 1px solid var(--trait);
-    text-transform: none;
-    letter-spacing: 0.05em;
-    color: var(--graphite);
-  }
-  .plan__bloc b { color: var(--encre); font-weight: 700; }
-  .plan__bloc-src { margin-left: auto; }
-  @media (max-width: 48rem) { .plan__bloc-src { margin-left: 0; } }
-
-  /* ── Sans script, et en mouvement réduit : le plan est déjà fini. ──── */
-  :global(.no-js) .plan__limite,
-  :global(.no-js) .plan__limite-trait,
-  :global(.no-js) .plan__borne,
-  :global(.no-js) .plan__cote,
-  :global(.no-js) .plan__noeud,
-  :global(.no-js) .hero__ligne { animation: none; opacity: 1; }
-  :global(.no-js) .plan__limite { opacity: 0.46; }
-  :global(.no-js) .plan__borne { transform: none; }
-  :global(.no-js) .plan__trait--tendu { stroke-dashoffset: 0; }
+  :global(.no-js) .hero__ligne,
+  :global(.no-js) .hero__promesse,
+  :global(.no-js) .hero__cotes,
+  :global(.no-js) .hero__actions { animation: none; opacity: 1; transform: none; }
 
   @media (prefers-reduced-motion: reduce) {
-    .plan__limite,
-    .plan__limite-trait,
-    .plan__borne,
-    .plan__cote,
-    .plan__noeud,
-    .plan__cible,
-    .hero__ligne { animation: none !important; opacity: 1; }
-    .plan__limite { opacity: 0.46; }
-    .plan__borne { transform: none; }
-    .plan__trait--tendu { stroke-dashoffset: 0; animation: none; }
+    .hero__ligne,
+    .hero__promesse,
+    .hero__cotes,
+    .hero__actions { animation: none !important; opacity: 1; transform: none; }
   }
 </style>
-
-<script>
-  /**
-   * Le trait de route suit la certitude du visiteur : dès qu'un choix est
-   * fait, la ligne se tend un peu plus. On lit la même variable que la barre
-   * de parcours pour qu'il n'existe qu'une seule source de vérité.
-   */
-  const plan = document.querySelector<HTMLElement>('[data-plan]');
-  if (plan) {
-    const suivre = () => {
-      const barre = document.querySelector<HTMLElement>('[data-parcours]');
-      const t = barre ? getComputedStyle(barre).getPropertyValue('--tension').trim() : '';
-      const v = Number(t);
-      // Sous le quart, on garde le tracé complet du chargement : le plan ne
-      // se rétracte jamais sous les yeux de quelqu'un qui n'a rien décidé.
-      if (Number.isFinite(v) && v > 0.25) plan.style.setProperty('--trace', String(v));
-    };
-    document.addEventListener('parcours:maj', suivre);
-    suivre();
-  }
-</script>

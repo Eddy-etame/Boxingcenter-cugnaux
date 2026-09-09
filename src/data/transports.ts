@@ -137,7 +137,7 @@ export const DEPARTS: readonly Depart[] = [
     depuis: 'Cugnaux',
     itineraire: 'quatre-vingt-cinq',
     texte:
-      'Tu montes dans la 85, tu descends à Portet Gare SNCF, tu prends la L5 sur le parvis. Elle t’arrête route d’Espagne.',
+      'Tu montes dans la 85, tu descends à Portet Gare SNCF, tu prends la L5 sur le parvis. Son premier arrêt est « Jean Jaurès », sur la route d’Espagne : le club est au 61.',
   },
   {
     depuis: 'Villeneuve-Tolosane',
@@ -155,3 +155,10 @@ export const DEPARTS: readonly Depart[] = [
 
 export const AVERTISSEMENT =
   'Les horaires changent d’une saison à l’autre. On te dit quels bus prendre ; pour l’heure exacte, ouvre la fiche Tisséo de la ligne — le lien est juste à côté de chaque étape.';
+
+/** Les nombres en lettres, pour compter depuis les registres sans jamais écrire un chiffre à la main. */
+export const NOMBRES = [
+  'zéro', 'un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf', 'dix',
+  'onze', 'douze', 'treize', 'quatorze', 'quinze', 'seize', 'dix-sept', 'dix-huit', 'dix-neuf', 'vingt',
+] as const;
+export const enLettres = (n: number) => NOMBRES[n] ?? String(n);
