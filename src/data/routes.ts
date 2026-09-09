@@ -199,7 +199,7 @@ export const ROUTES: readonly Route[] = [
     question: 'Je veux poser ma question à quelqu’un.',
     titre: 'Contact | Boxing Center depuis Cugnaux',
     description:
-      'Une question avant de te déplacer depuis Cugnaux ? Écris-nous, on te répond avec la discipline et le créneau qui correspondent. Téléphone : 05 62 24 46 82.',
+      'Une question avant de te déplacer depuis Cugnaux ? Écris-nous, on te répond avec la discipline et le créneau qui correspondent. Téléphone : 09 56 65 37 82.',
     menu: true,
     index: true,
   },
