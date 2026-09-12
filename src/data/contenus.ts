@@ -194,7 +194,7 @@ export const CONTENUS: readonly Contenu[] = [
     ],
     faq: [
       {
-        titre: 'Et la boxe thaï ?',
+        titre: 'Un club de boxe thaï près de Cugnaux ?',
         texte:
           "Du kick-boxing, pas du Muay Thaï. Les deux sont des boxes pieds-poings, mais la thaï ajoute les coudes, les genoux et le corps à corps. Le club de Portet-sur-Garonne publie le kick-boxing pour adultes et pour enfants/ados ; c'est la réponse honnête à cette recherche, et elle couvre la très grande majorité de ce que les gens attendent quand ils la tapent.",
       },
