@@ -39,37 +39,37 @@ export const CONTENUS: readonly Contenu[] = [
     id: 'boxe-anglaise',
     h1: 'Cours de boxe anglaise à proximité de Cugnaux',
     chapeau:
-      "La boxe anglaise se pratique aux poings, avec des gants, dans un cadre encadré. Aucun niveau n'est demandé pour commencer. Depuis Cugnaux, elle se pratique à Boxing Center Portet-sur-Garonne — la commune limitrophe, de l'autre côté de la route d'Espagne — six jours sur sept, de 10h à 21h30.",
+      "Deux mains gantées et un coach : c'est tout ce qu'il faut pour commencer la boxe anglaise, quel que soit ton niveau. Depuis Cugnaux, elle se pratique à Boxing Center Portet-sur-Garonne — la commune limitrophe, de l'autre côté de la route d'Espagne — six jours sur sept, de 10h à 21h30.",
     photoHero: 'boxe-anglaise-cugnaux',
     photoSecondaire: 'ring-de-boxe-cugnaux',
-    promesse: 'Apprendre à boxer pour de vrai, encadré, sans avoir rien à prouver à personne.',
+    promesse: 'Une boxe apprise geste par geste, dans la commune qui touche Cugnaux.',
     blocs: [
       {
-        titre: 'Quatre coups à apprendre',
+        titre: 'Quatre frappes, et tout le reste dans les jambes',
         texte:
-          "Uniquement les poings : direct, crochet, uppercut, et le jab qui prépare tout le reste. Ce qui ressemble à une limite est en réalité ce qui rend la discipline si dense — quand on ne dispose que de quatre coups, tout se joue ailleurs : dans les appuis, la distance, la garde et la lecture de celui d'en face. C'est un sport de placement bien plus que de puissance, et c'est exactement pour ça qu'une personne qui n'a jamais fait de sport peut y progresser vite.",
+          "Direct, crochet, uppercut, et le jab qui ouvre la voie : la boxe anglaise s'arrête là. Avec si peu de coups, la différence se fait sur les appuis, la distance, la garde et la lecture de l'adversaire. On y gagne par le placement plus que par la force, et c'est ce qui permet à un débutant sans passé sportif de progresser vite.",
       },
       {
-        titre: 'Tu ne prendras pas de coups le premier jour',
+        titre: 'Le sac d’abord, le partenaire plus tard',
         texte:
-          "L'opposition arrive plus tard, et seulement pour celles et ceux qui la souhaitent. Un débutant travaille au sac, à la corde, aux pattes d'ours avec un coach, et sur le déplacement à vide. Beaucoup de pratiquants s'entraînent des mois sans jamais faire d'opposition — et progressent énormément.",
+          "Au début, on frappe le sac, on saute à la corde, on travaille aux pattes d'ours avec le coach et on se déplace à vide. L'opposition vient ensuite, et seulement pour qui la demande. Des pratiquants passent des saisons entières sans elle, et progressent quand même.",
       },
       {
-        titre: 'Ce que ça change dans ta semaine',
+        titre: 'Ce que deux séances par semaine changent',
         texte:
-          "Deux séances par semaine suffisent à sentir une différence en un mois : sur le souffle d'abord, sur la posture ensuite, sur la façon de gérer la fatigue enfin. La boxe a ceci de particulier qu'elle occupe complètement la tête — il est très difficile de penser à sa journée de travail pendant un round au sac. Beaucoup viennent au départ pour la forme et restent pour cette raison-là.",
+          "À ce rythme, les premiers effets arrivent vite : le souffle en premier, puis la posture. Pendant un round au sac, le geste prend toute la place, et la journée de travail s'efface. Beaucoup s'inscrivent pour la forme et restent pour ce moment-là.",
       },
       {
-        titre: 'Comment tu y vas',
+        titre: 'De Cugnaux à la route d’Espagne',
         texte:
-          "C'est l'avantage que peu de communes du secteur peuvent revendiquer : Cugnaux et Portet-sur-Garonne se touchent. On descend par la route de Toulouse et la D63, ou on prend la rocade, et le club est au 61 route d'Espagne. Le vrai critère n'est jamais la distance, c'est l'habitude — quand la salle est dans la commune d'à côté, on y va aussi les soirs où on n'en a pas envie. Et c'est cela, et rien d'autre, qui fait qu'on tient en novembre.",
+          "C'est l'avantage que peu de communes du secteur peuvent revendiquer : Cugnaux et Portet-sur-Garonne se touchent. On descend par la route de Toulouse et la D63, ou on prend la rocade, et le club est au 61 route d'Espagne. Ce qui fait tenir une saison, c'est l'habitude plus que le trajet : avec la salle dans la commune d'à côté, on y va aussi les soirs sans envie, et on est encore là en novembre.",
       },
     ],
     seance: [
       'Échauffement : corde, mobilité, déplacements à vide',
-      'Technique : un geste, décomposé, répété lentement puis en rythme',
+      'Technique : un coup, montré au ralenti puis enchaîné',
       'Sac ou pattes d’ours : l’application, avec correction du coach',
-      'Renforcement : gainage, abdominaux, travail au poids du corps',
+      'Renforcement : gainage et abdominaux au sol',
       'Retour au calme et étirements',
     ],
     faq: [
@@ -79,14 +79,14 @@ export const CONTENUS: readonly Contenu[] = [
           "Au 61 route d'Espagne, à Portet-sur-Garonne : la commune qui touche Cugnaux. C'est la salle de 600 m² du réseau Boxing Center, avec un ring, une cage et un mur de sacs. Les Cugnalais y arrivent sans quitter le secteur.",
       },
       {
-        titre: 'Je suis débutant complet, à 40 ans passés. C’est trop tard ?',
+        titre: 'Commencer la boxe à 40 ans passés, c’est raisonnable ?',
         texte:
-          "C'est le profil le plus fréquent chez les nouveaux inscrits. La boxe se règle sur celui qui la pratique : la même séance existe à trois intensités, et c'est le coach qui décide de la tienne. Ce qui compte n'est pas ton point de départ, c'est le nombre de fois où tu reviens.",
+          "Tout à fait. La boxe se règle sur celui qui la pratique : la même séance existe à trois intensités, et c'est le coach qui décide de la tienne. Ce qui compte n'est pas ton point de départ, c'est le nombre de fois où tu reviens.",
       },
       {
         titre: 'Faut-il acheter du matériel avant la première séance ?',
         texte:
-          "Une tenue de sport, une bouteille d'eau, une serviette : c'est tout. Les gants et le matériel collectif sont sur place pour découvrir. Si tu continues, tu prendras tes propres gants et tes bandes — le club te dira lesquels, et ce n'est pas un investissement lourd.",
+          "Une tenue de sport, une bouteille d'eau, une serviette : c'est tout. Pour découvrir, tu trouves les gants et le matériel collectif sur place. Si tu continues, tu prendras tes propres gants et tes bandes — le club te dira lesquels, et ce n'est pas un investissement lourd.",
       },
       {
         titre: 'Quelle différence avec le kick-boxing ?',
@@ -99,15 +99,15 @@ export const CONTENUS: readonly Contenu[] = [
     id: 'mma',
     h1: 'Club MMA et grappling à proximité de Cugnaux',
     chapeau:
-      "Le MMA combine la frappe debout, le corps à corps et le combat au sol. Depuis Cugnaux, il se pratique à Boxing Center Portet-sur-Garonne, la commune limitrophe : c'est le seul club du réseau équipé d'une cage, et l'entraînement s'y fait dedans. Le grappling et le jiu-jitsu brésilien y sont publiés séparément, sans aucune frappe.",
+      "Frappe debout, corps à corps, combat au sol : le MMA passe de l'un à l'autre. Depuis Cugnaux, il se pratique à Boxing Center Portet-sur-Garonne, la commune limitrophe : c'est le seul club du réseau équipé d'une cage, et l'entraînement s'y fait dedans. Le grappling et le jiu-jitsu brésilien y sont publiés séparément, sans aucune frappe.",
     photoHero: 'cage-mma-cugnaux',
     photoSecondaire: 'sac-de-frappe-cugnaux-2',
     promesse: 'Entrer dans une vraie cage, avec des gens dont le métier est de t’y apprendre à te tenir.',
     blocs: [
       {
-        titre: 'Debout, au corps à corps, au sol',
+        titre: 'Frapper, saisir, contrôler',
         texte:
-          "Le MMA se joue sur trois zones : debout, où l'on frappe ; au corps à corps, où l'on projette ; et au sol, où l'on contrôle et où l'on soumet. Un pratiquant progresse en apprenant à passer de l'une à l'autre — et la plupart des débutants découvrent qu'ils sont déjà à l'aise sur l'une des trois sans le savoir. C'est ce qui rend la discipline si rapide à accrocher.",
+          "Trois terrains se succèdent en MMA : la frappe à distance, la saisie et la projection au contact, puis le contrôle et la soumission au sol. Tout le travail consiste à passer de l'un à l'autre, et la plupart des débutants se découvrent à l'aise sur l'un des trois dès les premières semaines. C'est ce qui rend la discipline si rapide à accrocher.",
       },
       {
         titre: 'La cage, et ce qu’on y travaille',
@@ -127,10 +127,10 @@ export const CONTENUS: readonly Contenu[] = [
     ],
     seance: [
       'Échauffement spécifique : nuque, hanches, déplacements au sol',
-      'Debout : une situation de frappe, en gants, à intensité choisie',
-      'Corps à corps : la saisie, l’amenée au sol, la sortie',
-      'Sol : un contrôle et une soumission, décomposés',
-      'Mise en situation encadrée, puis retour au calme',
+      'Debout, en gants : une séquence de frappe dosée par le coach',
+      'Au contact : saisir, amener au sol, se dégager',
+      'Au sol : tenir une position, puis finir par une soumission',
+      'Un passage dans la cage, puis le retour au calme',
     ],
     faq: [
       {
@@ -139,14 +139,14 @@ export const CONTENUS: readonly Contenu[] = [
           "À Portet-sur-Garonne, au 61 route d'Espagne — la commune qui touche Cugnaux. C'est la seule cage du réseau Boxing Center, et l'entraînement de MMA s'y déroule dedans, pas à côté.",
       },
       {
-        titre: 'On peut débuter sans rien connaître ?',
+        titre: 'Jamais fait de MMA : on peut s’y mettre ?',
         texte:
-          "Oui. Un débutant ne fait pas de combat : il apprend à chuter, à se relever, à tenir une position. Le contact est progressif et l'intensité se règle. Les gens qui se blessent en sports de combat sont presque toujours ceux qui ont brûlé les étapes, et c'est précisément le rôle d'un coach de ne pas te laisser faire.",
+          "Oui. Les premières séances apprennent à chuter, à se relever et à tenir une position, sans combat. Le contact arrive par étapes, et l'intensité se règle. Les gens qui se blessent en sports de combat sont presque toujours ceux qui ont brûlé les étapes, et c'est précisément le rôle d'un coach de ne pas te laisser faire.",
       },
       {
         titre: 'Grappling ou MMA : par lequel commencer ?',
         texte:
-          "Si l'idée de recevoir un coup te bloque, commence par le grappling ou le jiu-jitsu brésilien : ils sont publiés par le club et ne comportent aucune frappe. Si c'est la frappe qui t'attire, le MMA en cage t'ira directement. Beaucoup finissent par faire les deux dans la même semaine.",
+          "Si recevoir un coup t'inquiète, le grappling et le jiu-jitsu brésilien sont faits pour toi : le club publie les deux, et aucun ne comporte de frappe. Si c'est la frappe qui te plaît, va directement au MMA en cage. Beaucoup finissent par faire les deux dans la même semaine.",
       },
       {
         titre: 'Le MMA, c’est dangereux ?',
@@ -159,13 +159,13 @@ export const CONTENUS: readonly Contenu[] = [
     id: 'kick-boxing',
     h1: 'Kick-boxing et boxe pieds-poings à proximité de Cugnaux',
     chapeau:
-      "Le kick-boxing ajoute les jambes aux poings : c'est la boxe pieds-poings. Depuis Cugnaux, elle se pratique à Boxing Center Portet-sur-Garonne, la commune limitrophe, pour les adultes comme pour les enfants et les ados. Le club publie le kick-boxing ; il ne publie pas de créneau de Muay Thaï, et on ne va pas te dire le contraire.",
+      "Poings et jambes à la fois : le kick-boxing est une boxe pieds-poings. Depuis Cugnaux, elle se pratique à Boxing Center Portet-sur-Garonne, la commune limitrophe, pour les adultes comme pour les enfants et les ados. Le club publie le kick-boxing ; il ne publie pas de créneau de Muay Thaï, et on ne va pas te dire le contraire.",
     photoHero: 'sac-de-frappe-cugnaux',
     photoSecondaire: 'poires-de-vitesse-cugnaux',
-    promesse: 'Ajouter les jambes, sans perdre la garde. Le sport le plus complet du club, debout.',
+    promesse: 'Les jambes en renfort des poings, et une garde qui reste en place.',
     blocs: [
       {
-        titre: 'Les jambes en plus des poings',
+        titre: 'Poings et jambes : ce qui change',
         texte:
           "Ajouter les jambes ne double pas la difficulté : ça la multiplie. La distance n'est plus la même, la garde doit descendre sans s'ouvrir, l'appui devient un problème permanent puisqu'on frappe sur une jambe. C'est pour ça que le kick-boxing est le meilleur révélateur de niveau technique d'une salle — et pourquoi il fatigue autant la première fois.",
       },
@@ -177,7 +177,7 @@ export const CONTENUS: readonly Contenu[] = [
       {
         titre: 'K1, full contact : quelle différence',
         texte:
-          "Sous le mot « kick-boxing » vivent plusieurs règlements : le full contact interdit les coups sous la ceinture, le K1 autorise le low kick et le corps à corps bref. À l'entraînement, la différence tient à quelques consignes ; à l'échauffement, à la technique et au sac, on fait exactement le même travail. Le nom du règlement ne compte que le jour où on monte sur un ring.",
+          "Sous le mot « kick-boxing » vivent plusieurs règlements : le full contact interdit les coups sous la ceinture, le K1 autorise le low kick et le corps à corps bref. À l'entraînement, seules quelques consignes changent ; l'échauffement, la technique et le sac restent identiques. Le nom du règlement ne compte que le jour où on monte sur un ring.",
       },
       {
         titre: 'Quel créneau choisir',
@@ -190,7 +190,7 @@ export const CONTENUS: readonly Contenu[] = [
       'Technique pieds-poings : une combinaison, décomposée puis enchaînée',
       'Sac et paos : puissance et placement, avec correction',
       'Renforcement du bas du corps et du gainage',
-      'Étirements longs — indispensables quand on frappe avec les jambes',
+      'Étirements longs des hanches et des jambes',
     ],
     faq: [
       {
@@ -227,17 +227,17 @@ export const CONTENUS: readonly Contenu[] = [
       {
         titre: 'Ce qu’un enfant apprend d’abord',
         texte:
-          "Il apprend à se tenir, à regarder, à attendre son tour, à s'arrêter net quand on le lui demande. La frappe arrive après, et toujours contrôlée. Les parents qui viennent chercher un défouloir repartent souvent surpris : ce que la boxe éducative installe en premier, c'est un cadre — et c'est précisément ce cadre qui calme les enfants qu'on lui amène pour ça.",
+          "Il apprend à se tenir, à regarder, à attendre son tour, à s'arrêter net quand on le lui demande. La frappe arrive après, et toujours contrôlée. Beaucoup de parents amènent leur enfant pour qu'il se dépense, et découvrent que la boxe éducative commence par poser un cadre. C'est ce cadre, plus que la dépense, qui calme les enfants qu'on lui confie pour ça.",
       },
       {
         titre: 'Trois cours selon l’âge',
         texte:
-          "La Baby boxe est une première approche : le jeu, l'équilibre, la notion de distance. La boxe éducative ajoute le geste, la règle et le respect du partenaire. Le kick-boxing enfants/ados est la suite, pour ceux qui veulent aussi travailler les jambes. Les âges exacts de chaque créneau sont publiés par le club — on ne les invente pas ici.",
+          "La Baby boxe fait découvrir, par le jeu, l'équilibre et la distance. Vient ensuite la boxe éducative, avec le geste, la règle et le respect de celui d'en face. Le kick-boxing enfants/ados est la suite, pour ceux qui veulent aussi travailler les jambes. Les âges exacts de chaque créneau sont publiés par le club — on ne les invente pas ici.",
       },
       {
-        titre: 'Ton enfant ne prendra pas de coups',
+        titre: 'Un contact toujours contrôlé',
         texte:
-          "Le travail se fait au touché contrôlé : on cible, on effleure, on dose. Les protections sont adaptées à la taille et l'opposition libre n'existe pas dans ces créneaux. Un enfant qui se fait mal en boxe éducative, c'est un incident, pas une étape du programme.",
+          "Chaque touche est contrôlée : l'enfant vise, effleure et retient son geste. Il porte des protections à sa taille, et ces créneaux excluent toute opposition libre. Un enfant qui se fait mal en boxe éducative, c'est un incident, pas une étape du programme.",
       },
       {
         titre: 'Le trajet, pour un parent',
@@ -247,21 +247,21 @@ export const CONTENUS: readonly Contenu[] = [
     ],
     seance: [
       'Échauffement en jeu : déplacements, réactions, coordination',
-      'Rappel de la règle : la garde, la distance, le signal d’arrêt',
-      'Technique : un geste simple, répété, corrigé un par un',
-      'Application au sac ou aux pattes, en touché contrôlé',
-      'Retour au calme, et le mot du coach sur la séance',
+      'La règle redite : garde haute, bonne distance, arrêt au signal',
+      'Un geste simple, que le coach corrige chez chacun',
+      'Le même geste au sac, en touchant sans frapper',
+      'Retour au calme, et un mot du coach pour finir',
     ],
     faq: [
       {
-        titre: 'À partir de quel âge ?',
+        titre: 'À partir de quel âge à Portet ?',
         texte:
           "Le club publie un créneau Baby boxe pour les plus petits, puis la boxe éducative, puis le kick-boxing enfants/ados. Les tranches d'âge exactes figurent sur le planning du club, et elles peuvent bouger d'une saison à l'autre : c'est la seule source à jour, et c'est pour ça qu'on t'y envoie plutôt que de recopier un chiffre.",
       },
       {
         titre: 'Mon enfant est très timide. Ça peut aller ?',
         texte:
-          "C'est souvent lui qui en tire le plus. Un cours de boxe éducative n'oblige personne à s'exposer : on travaille par deux, sur une consigne précise, et le coach circule. Beaucoup d'enfants réservés y trouvent leur premier sport où l'on n'est pas jugé sur la performance devant tout le monde.",
+          "Souvent, c'est même lui qui en profite le plus. Un cours de boxe éducative n'oblige personne à s'exposer : le travail se fait en binôme, sur une consigne claire, pendant que le coach passe de l'un à l'autre. Beaucoup d'enfants réservés y trouvent leur premier sport où l'on n'est pas jugé sur la performance devant tout le monde.",
       },
       {
         titre: 'Et si c’est justement pour canaliser trop d’énergie ?',
@@ -269,7 +269,7 @@ export const CONTENUS: readonly Contenu[] = [
           "C'est le cas de figure le plus courant, et il fonctionne — à une condition : que l'enfant accepte la règle. La boxe donne beaucoup à ceux qui ont trop d'énergie, mais elle commence par leur demander de s'arrêter au signal. C'est ce contrat-là qui produit l'effet que les parents cherchent.",
       },
       {
-        titre: 'Il faut acheter des gants tout de suite ?',
+        titre: 'Faut-il acheter des gants dès le début ?',
         texte:
           "Une tenue de sport et une bouteille d'eau suffisent pour les premières séances. Si ton enfant continue, le club te dira quel matériel prendre et à quelle taille — inutile d'anticiper, les mains grandissent vite.",
       },
