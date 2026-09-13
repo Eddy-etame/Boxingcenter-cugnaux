@@ -1,4 +1,5 @@
 import type { APIRoute } from 'astro';
+import { texteAuteur } from '../data/auteur';
 import { MEILLEUR } from '../data/transports';
 import { ROUTES } from '../data/routes';
 import { SITE, CONTACT, DESTINATION, VILLE, LIMITROPHES } from '../data/verite';
@@ -110,6 +111,8 @@ ${pages}
 - Aucun prix, aucun avis, aucune note ne sont revendiqués ici.
 - ${VILLE.figure.valeur.charAt(0).toUpperCase() + VILLE.figure.valeur.slice(1)} : c'est un fait
   sur la ville, pas sur le club.
+
+${texteAuteur()}
 `,
     { headers: { 'content-type': 'text/plain; charset=utf-8' } }
   );
