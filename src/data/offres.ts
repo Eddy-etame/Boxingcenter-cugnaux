@@ -34,47 +34,47 @@ export const OFFRES: readonly Offre[] = [
   {
     intitule: 'Boxe anglaise',
     famille: 'boxe-anglaise',
-    detail: 'Les poings, la garde, les déplacements. La porte d’entrée la plus simple.',
+    detail: 'Poings seuls, garde et déplacements : le cours le plus simple pour commencer.',
   },
   {
     intitule: 'Kick-boxing',
     famille: 'kick-boxing',
-    detail: 'Les jambes en plus des poings, en garde haute et sur appuis.',
+    detail: 'Poings et jambes, garde haute, travail sur appuis.',
   },
   {
     intitule: 'MMA',
     famille: 'mma',
-    detail: 'Debout, au corps à corps et au sol — et l’entraînement se fait dans la cage.',
+    detail: 'Frappe debout, corps à corps et sol, travaillés dans la cage du club.',
   },
   {
     intitule: 'Grappling & jiu-jitsu brésilien',
     famille: 'grappling',
-    detail: 'Le contrôle, les projections et les soumissions. Aucune frappe : on n’y prend pas de coup.',
+    detail: 'Contrôles, projections et soumissions, sans aucune frappe reçue.',
   },
   {
     intitule: 'Lady Boxing',
     famille: 'femme',
-    detail: 'Le geste de boxe et le cardio, entre femmes.',
+    detail: 'Boxe et cardio dans un groupe réservé aux femmes.',
   },
   {
     intitule: 'Préparation physique',
     famille: 'physique',
-    detail: 'Le moteur : gainage, force, souffle. Ce qui fait tenir les trois derniers rounds.',
+    detail: 'Gainage, force et souffle : la base qui fait tenir un combat jusqu’au bout.',
   },
   {
     intitule: 'Baby boxe',
     famille: 'enfants',
-    detail: 'La première approche : le jeu, l’équilibre, la notion de distance.',
+    detail: 'Un premier contact par le jeu : équilibre et notion de distance.',
   },
   {
     intitule: 'Boxe éducative',
     famille: 'enfants',
-    detail: 'Le geste, la règle et le respect du partenaire. Touché contrôlé, jamais de mise en danger.',
+    detail: 'Le geste, la règle et le respect de l’autre, en touché contrôlé et sans mise en danger.',
   },
   {
     intitule: 'Kick-boxing enfants/ados',
     famille: 'enfants',
-    detail: 'La suite éducative pour ceux qui veulent aussi travailler les jambes.',
+    detail: 'Pour les jeunes qui veulent ajouter les jambes après la boxe éducative.',
   },
 ] as const;
 

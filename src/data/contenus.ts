@@ -99,7 +99,7 @@ export const CONTENUS: readonly Contenu[] = [
     id: 'mma',
     h1: 'Club MMA et grappling à proximité de Cugnaux',
     chapeau:
-      "Frappe debout, corps à corps, combat au sol : le MMA passe de l'un à l'autre. Depuis Cugnaux, il se pratique à Boxing Center Portet-sur-Garonne, la commune limitrophe : c'est le seul club du réseau équipé d'une cage, et l'entraînement s'y fait dedans. Le grappling et le jiu-jitsu brésilien y sont publiés séparément, sans aucune frappe.",
+      "Frappe debout, corps à corps, combat au sol : le MMA passe de l'un à l'autre. Depuis Cugnaux, il se pratique à Boxing Center Portet-sur-Garonne, la commune limitrophe : c'est la cage du réseau la plus proche de Cugnaux, et l'entraînement s'y fait dedans. Le grappling et le jiu-jitsu brésilien y sont publiés séparément, sans aucune frappe.",
     photoHero: 'cage-mma-cugnaux',
     photoSecondaire: 'sac-de-frappe-cugnaux-2',
     promesse: 'Entrer dans une vraie cage, avec des gens dont le métier est de t’y apprendre à te tenir.',
@@ -112,7 +112,7 @@ export const CONTENUS: readonly Contenu[] = [
       {
         titre: 'La cage, et ce qu’on y travaille',
         texte:
-          "La cage n'est pas un décor : sa paroi fait partie du jeu. On y travaille les appuis contre le grillage, les relevés, les sorties de contrôle — des situations qui n'existent tout simplement pas sur un tatami ouvert. Boxing Center Portet-sur-Garonne est le seul club du réseau à en avoir une, ce qui fait de la commune voisine de Cugnaux l'adresse la plus proche pour s'y entraîner.",
+          "La cage n'est pas un décor : sa paroi fait partie du jeu. On y travaille les appuis contre le grillage, les relevés, les sorties de contrôle — des situations qui n'existent tout simplement pas sur un tatami ouvert. Boxing Center Portet-sur-Garonne en a une, dans la commune voisine : c'est la cage du réseau la plus proche de Cugnaux.",
       },
       {
         titre: 'Le grappling, sans les coups',
@@ -136,7 +136,7 @@ export const CONTENUS: readonly Contenu[] = [
       {
         titre: 'La cage est où ?',
         texte:
-          "À Portet-sur-Garonne, au 61 route d'Espagne — la commune qui touche Cugnaux. C'est la seule cage du réseau Boxing Center, et l'entraînement de MMA s'y déroule dedans, pas à côté.",
+          "À Portet-sur-Garonne, au 61 route d'Espagne — la commune qui touche Cugnaux. C'est la cage du réseau Boxing Center la plus proche de Cugnaux, et l'entraînement de MMA s'y déroule dedans, pas à côté.",
       },
       {
         titre: 'Jamais fait de MMA : on peut s’y mettre ?',

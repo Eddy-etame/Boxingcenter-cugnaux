@@ -111,7 +111,7 @@ export const CLUBS: readonly Club[] = [
     fermetureTexte: '21h30',
     acces:
       "En voiture, tu descends par la route de Toulouse et la D63, ou tu prends la rocade. En bus, la 85 puis la L5. Le club est au 61 route d'Espagne.",
-    singularite: 'Le seul club du réseau avec une cage MMA.',
+    singularite: 'Un ring, une cage MMA et un mur de sacs sur 600 m², de l’autre côté de la route d’Espagne.',
     faits: [
       { cle: 'Voisinage', valeur: 'communes limitrophes', source: 'Wikipédia' },
       { cle: 'Surface', valeur: '600 m²', source: 'boxing-center-portet.fr' },
