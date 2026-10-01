@@ -30,6 +30,11 @@ export type RouteId =
   | 'frouzins'
   | 'seysses'
   | 'nos-clubs'
+  /* conseils:début */
+  | 'conseils'
+  | 'equipement-kick-boxing'
+  | 'choisir-protege-dents'
+  /* conseils:fin */
   | 'contact'
   | 'merci'
   | 'introuvable'
@@ -205,6 +210,41 @@ export const ROUTES: readonly Route[] = [
     // hors index : mêmes adresses sur les sept sites de proximité ; liens suivis
     index: true,
   },
+  /* conseils:routes */
+  {
+    id: 'conseils',
+    chemin: '/conseils/',
+    nav: 'Conseils matériel',
+    question: 'Quel équipement pour le kick-boxing, et quel protège-dents choisir ?',
+    titre: 'Kick-boxing, protège-dents : conseils matériel | Cugnaux',
+    description:
+      'Équipement de kick-boxing, choix du protège-dents : les conseils de Boxing Center pour les Cugnalais qui s’entraînent à Portet-sur-Garonne.',
+    menu: false,
+    index: true,
+  },
+  {
+    id: 'equipement-kick-boxing',
+    chemin: '/conseils/equipement-kick-boxing/',
+    nav: 'Équipement kick-boxing',
+    question: 'Quel équipement faut-il pour débuter le kick-boxing ?',
+    titre: 'Équipement de kick-boxing : que faut-il acheter ?',
+    description:
+      'Gants, protège-tibias avec pied, protège-dents, coquille : l’équipement de kick-boxing d’un débutant, et ce qui peut attendre, quand on vient de Cugnaux.',
+    menu: false,
+    index: true,
+  },
+  {
+    id: 'choisir-protege-dents',
+    chemin: '/conseils/choisir-protege-dents/',
+    nav: 'Choisir son protège-dents',
+    question: 'Comment choisir et mouler un protège-dents de boxe ?',
+    titre: 'Protège-dents de boxe : le choisir et le mouler',
+    description:
+      'Simple ou double, à mouler à l’eau chaude, compatible avec un appareil dentaire : choisir son protège-dents de boxe et le former en quelques gestes.',
+    menu: false,
+    index: true,
+  },
+  /* conseils:routes:fin */
   {
     id: 'contact',
     chemin: '/contact/',
