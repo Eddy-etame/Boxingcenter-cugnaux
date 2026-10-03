@@ -65,7 +65,7 @@ export const CONSEILS: readonly Conseil[] = [
     photo: 'sac-de-frappe-cugnaux',
     sujet: 'Conseil · Kick-boxing',
     publie: '2026-10-02',
-    maj: '2026-10-02',
+    maj: '2026-10-03',
     sections: [
       {
         sur: 'Le cours',
@@ -102,7 +102,7 @@ export const CONSEILS: readonly Conseil[] = [
         sur: 'Plus tard',
         h2: 'Casque et chevillères : pas tout de suite.',
         paras: [
-          'Le <a class="lien" href="https://www.boutique-de-boxe.com/casques-de-boxe/" rel="noopener">casque</a> ne s’achète qu’au moment du sparring : son tour de tête et sa couverture se choisissent selon la pratique. Les chevillères sont un confort — utiles si tes chevilles sont fragiles, pas indispensables.',
+          'Le <a class="lien" href="https://www.boutique-de-boxe.com/casques-de-boxe/" rel="noopener">casque</a> ne s’achète qu’au moment du sparring : son tour de tête et sa couverture se choisissent selon la pratique. Les chevillères sont un confort — utiles si tes chevilles sont fragiles, pas indispensables. Boutique de Boxe a réuni <a class="lien" href="https://www.boutique-de-boxe.com/materiel-kick-boxing/" rel="noopener">le matériel de kick-boxing</a> sur une seule page, avec le nombre de modèles de chaque rayon.',
           'Pour quitter le club déjà équipé, <a class="lien" href="https://boutique.boxingcenter.fr/materiel" rel="noopener">la boutique Boxing Center</a> vend gants et protège-tibias en ligne, à récupérer en salle. Le club de Portet a aussi écrit <a class="lien" href="https://boxing-center-portet.fr/conseils/equipement-boxe-debutant/" rel="noopener">son guide du débutant</a>, discipline par discipline.',
         ],
       },
