@@ -148,7 +148,7 @@ export const CONSEILS: readonly Conseil[] = [
     photo: 'pattes-d-ours-cugnaux',
     sujet: 'Conseil · Protège-dents',
     publie: '2026-10-02',
-    maj: '2026-10-02',
+    maj: '2026-10-03',
     sections: [
       {
         sur: 'Le moment',
@@ -185,7 +185,7 @@ export const CONSEILS: readonly Conseil[] = [
         sur: 'L’entretien',
         h2: 'Rincé, séché, dans sa boîte.',
         paras: [
-          'Rince-le à l’eau froide après chaque séance, laisse-le sécher à l’air et range-le dans une boîte percée — jamais au fond d’un gant. Change-le quand il se déforme, se fend ou ne tient plus seul.',
+          'Rince-le à l’eau froide après chaque séance, laisse-le sécher à l’air et range-le dans une boîte percée — jamais au fond d’un gant. Change-le quand il se déforme, se fend ou ne tient plus seul. Le casque et la coquille, qui viennent ensuite, attendent dans <a class="lien" href="https://www.boutique-de-boxe.com/protections-boxe/" rel="noopener">le rayon des protections de boxe</a> de la même boutique.',
           'Le club vend un protège-dents adulte à <a class="lien" href="https://boutique.boxingcenter.fr/materiel" rel="noopener">la boutique Boxing Center</a>, en retrait à la salle.',
         ],
       },
